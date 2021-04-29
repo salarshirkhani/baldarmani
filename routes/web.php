@@ -14,8 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('profile', 'FrontController@profile')->name('profile');
-
+Route::get('/', 'FrontController@index')->name('/');
+Route::get('products', 'FrontController@products')->name('products');
+Route::get('single', 'FrontController@Sproduct')->name('single');
 
 Auth::routes();
 

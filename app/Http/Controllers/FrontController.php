@@ -12,14 +12,21 @@ class FrontController extends Controller
 {
 
     public function index() {
-        $items = Product::orderBy('created_at', 'desc')->limit(5)->get()
-            ->merge(Service::orderBy('created_at', 'desc')->limit(5)->get())
-            ->sortByDesc('created_at');
-        return view('index', [
-            'items' => $items,
-            'sliderItems' => SliderItem::orderBy('priority', 'desc')->get(),
-        ]);
+
+        return view('welcome');
+
     }
 
+    public function products() {
+
+        return view('product');
+
+    }
+
+    public function Sproduct() {
+
+        return view('single-product');
+
+    }
 
 }

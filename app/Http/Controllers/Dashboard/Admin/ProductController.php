@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests;
 use Illuminate\Session\Store;
 use App\User;
+use App\Category;
 use Illuminate\Auth\Access\Gate; 
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Null_;
@@ -15,7 +16,7 @@ class ProductController extends Controller
 {
     public function GetCreatePost()
     {
-        return view('dashboard.admin.product.create');
+        return view('dashboard.admin.product.create',['categories' => Category::hierarchy()]);
     }
 
     public function CreatePost(Request $request)
@@ -24,6 +25,7 @@ class ProductController extends Controller
             'name' => $request->input('title'),
             'explain' => $request->input('explain'),
             'price' => $request->input('price'),
+            'category'=>$request->input('category_id'),
             'content' => $request->input('content'),
         ]);
     //--------------
@@ -53,7 +55,7 @@ class ProductController extends Controller
     public function GetEditPost($id)
     { 
         $post = product::find($id);
-        return view('dashboard.admin.product.updateproduct', ['post' => $post, 'id' => $id]);
+        return view('dashboard.admin.product.updatepost', ['post' => $post, 'id' => $id,'categories' => Category::hierarchy()]);
     }
 
     public function UpdatePost(Request $request)
@@ -64,8 +66,9 @@ class ProductController extends Controller
             $post->explain = $request->input('explain');
             $post->price = $request->input('price');
             $post->content = $request->input('content');
+            $post->category = $request->input('category_id');
             $post->save();
         }
-        return redirect()->route('dashboard.admin.product.updateproduct',$post->id)->with('info', 'محصول ویرایش شد');
+        return redirect()->route('dashboard.admin.product.manage',$post->id)->with('info', 'محصول ویرایش شد');
     }
 }

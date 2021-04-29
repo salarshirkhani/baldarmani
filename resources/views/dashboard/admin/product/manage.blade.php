@@ -32,7 +32,7 @@
                                 <tbody>
                              @foreach($posts as $item)
                                 <tr>
-                                    <td>{{ $item->title }}</td>
+                                    <td>{{ $item->name }}</td>
                                     <td>{{ $item->explain }}</td>
                                     <td>{{ $item->price }}</td>
                                     <td>
