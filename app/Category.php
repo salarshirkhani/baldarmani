@@ -15,26 +15,26 @@ use Illuminate\Database\Eloquent\Model;
  * @property int|null $parent_id
  * @property \Illuminate\Support\Carbon|null $created_at
  * @property \Illuminate\Support\Carbon|null $updated_at
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Category[] $children
+ * @property string $alt_name
+ * @property-read \Illuminate\Database\Eloquent\Collection|Category[] $children
  * @property-read int|null $children_count
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Company[] $companies
  * @property-read int|null $companies_count
- * @property-read \App\Category|null $parent
+ * @property-read Category|null $parent
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Product[] $products
  * @property-read int|null $products_count
- * @property-read \Illuminate\Database\Eloquent\Collection|\App\Service[] $services
- * @property-read int|null $services_count
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category newModelQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category newQuery()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category query()
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereCreatedAt($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereDescription($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereName($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereParentId($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereSlug($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereType($value)
- * @method static \Illuminate\Database\Eloquent\Builder|\App\Category whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newModelQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category newQuery()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category query()
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereAltName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereDescription($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereName($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereParentId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereType($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|Category whereUpdatedAt($value)
  * @mixin \Eloquent
  */
 class Category extends Model
@@ -43,26 +43,6 @@ class Category extends Model
 
     protected $fillable = ['name', 'slug', 'description', 'type'];
 
-    public function companies() {
-        if (!empty($this->type) && $this->type != 'company')
-            throw new \LogicException("This category type doesn't support companies.");
-
-        return $this->hasMany('App\Company', 'category_id');
-    }
-
-    public function products() {
-        if (!empty($this->type) && $this->type != 'product')
-            throw new \LogicException("This category type doesn't support products.");
-
-        return $this->hasMany('App\Product', 'category_id');
-    }
-
-    public function services() {
-        if (!empty($this->type) && $this->type != 'service')
-            throw new \LogicException("This category type doesn't support services.");
-
-        return $this->hasMany('App\Service', 'category_id');
-    }
 
     public function parent() {
         return $this->belongsTo('App\Category', 'parent_id');
@@ -72,31 +52,41 @@ class Category extends Model
         return $this->hasMany('App\Category', 'parent_id');
     }
 
-    public function childrenHierarchy() {
-        $data = [
-            'name' => $this->name,
-            'slug' => $this->slug,
-            'children' => []
-        ];
-        $this->load('children');
-        /** @var Category $child */
-        foreach ($this->children as $child) {
-            $data['children'][$child->id] = $child->childrenHierarchy();
-        }
-        return $data;
+    public function allParent()
+    {
+        return $this->parent()->with('allParent');
     }
 
-    public static function hierarchy($type = null) {
-        $roots = self::whereNull('parent_id');
-        if ($type != null)
-            $roots = $roots->where('type', $type);
-        $roots = $roots->with('children')->get();
 
-        $hierarchy = [];
-        /** @var Category $category */
-        foreach ($roots as $category) {
-            $hierarchy[$category->id] = $category->childrenHierarchy();
-        }
-        return $hierarchy;
+    public function allChildren()
+    {
+        return $this->children()->with('allChildren');
+    }
+
+
+    public static function hierarchy($type = null)
+    {
+        $query = self::whereRaw('1=1');
+        if ($type != null)
+            $query = $query->whereIn('type', \Arr::wrap($type));
+
+        return $query
+            ->with('allParent')
+            ->get()
+            ->sortBy(function (Category $category, $key) {
+                $sort = $category->id;
+                $level = 1;
+                $upCategory = $category;
+                while (true) {
+                    $upCategory = $upCategory->allParent;
+                    if (empty($upCategory))
+                        break;
+                    $sort += $upCategory->id * (1000 ** $level);
+                    $level ++;
+                }
+                $sort *= 1000 ** (3 - $level); // 3 Levels - Change 3 to another number to change deepness
+                $category->level = $level;
+                return $sort;
+            });
     }
 }

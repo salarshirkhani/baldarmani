@@ -19,7 +19,7 @@ class CreateProductsTable extends Migration
             $table->text('explain');
             $table->text('content');
             $table->string('pic', 191);
-            $table->BigInteger('price');
+            $table->BigInteger('price')->nullable();
             $table->string('category', 191);
             $table->timestamps();
         });

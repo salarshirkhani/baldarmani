@@ -76,6 +76,6 @@ class PostController extends Controller
             $post->content = $request->input('content');
             $post->save();
         }
-        return redirect()->route('dashboard.admin.voip.updatepost',$post->id)->with('info', 'شماره ویرایش شد');
+        return redirect()->route('dashboard.admin.news.updatepost',$post->id)->with('info', 'پست ویرایش شد');
     }
 }
