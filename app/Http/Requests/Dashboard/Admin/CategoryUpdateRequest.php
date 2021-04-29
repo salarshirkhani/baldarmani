@@ -9,10 +9,7 @@ class CategoryUpdateRequest extends CategoryRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return $this->user()->can('update', $this->route('category'));
-    }
+
 
     public function rules()
     {

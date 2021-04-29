@@ -51,9 +51,7 @@ Route::prefix('dashboard')
  
                 //Category Controller 
                 Route::resource("categories", "CategoryController");
-                Route::resource("forum-categories", "ForumCategoryController")->parameters([
-                    'forum-categories' => 'category'
-                ]);               
+           
             });
 
         Route::prefix('customer')

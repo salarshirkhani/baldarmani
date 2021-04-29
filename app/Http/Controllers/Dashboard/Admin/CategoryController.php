@@ -9,10 +9,6 @@ use App\Http\Requests\Dashboard\Admin\CategoryUpdateRequest;
 
 class CategoryController extends Controller
 {
-    public function __construct()
-    {
-        $this->authorizeResource(Category::class, 'category');
-    }
 
     public function index() {
         return view('dashboard.admin.categories.index', [

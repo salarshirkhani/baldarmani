@@ -11,10 +11,7 @@ class CategoryStoreRequest extends CategoryRequest
      *
      * @return bool
      */
-    public function authorize()
-    {
-        return $this->user()->can('create', Category::class);
-    }
+
 
     public function rules()
     {
