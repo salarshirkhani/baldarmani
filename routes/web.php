@@ -47,7 +47,13 @@ Route::prefix('dashboard')
                 Route::get('product/manage', 'ProductController@GetManagePost')->name('product.manage');
                 Route::get('deleteproduct/{id}','ProductController@DeletePost')->name('product.deleteproduct');  
                 Route::get('updateproduct/{id}','ProductController@GetEditPost')->name('product.updateproduct');
-                Route::post('updateproduct/{id}','ProductController@UpdatePost')->name('product.updateproduct');
+                Route::post('updateproduct/{id}','ProductController@UpdatePost')->name('product.updateproduct');      
+ 
+                //Category Controller 
+                Route::resource("categories", "CategoryController");
+                Route::resource("forum-categories", "ForumCategoryController")->parameters([
+                    'forum-categories' => 'category'
+                ]);               
             });
 
         Route::prefix('customer')
