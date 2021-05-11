@@ -21,7 +21,7 @@
         "morilog/jalali": "^3.0",
         "pusher/pusher-php-server": "^4.1",
         "rinvex/laravel-subscriptions": "^4.0",
-        "shetabit/payment": "^2.4"
+        "shetabit/payment": "^4.0"
     },
     "require-dev": {
         "andrey-helldar/laravel-lang-publisher": "^4.0",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "bb1d0bc5d734fe6aa51ea2b1b442ea58",
+    "content-hash": "de3482cb9e07cd3ba2f9c9df6b8b467a",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -2888,30 +2888,153 @@
             "time": "2020-05-30T02:22:01+00:00"
         },
         {
-            "name": "shetabit/payment",
-            "version": "v2.4.8",
+            "name": "shetabit/multipay",
+            "version": "v1.3.0",
             "source": {
                 "type": "git",
-                "url": "https://github.com/shetabit/payment.git",
-                "reference": "5dfa20534b76e318f8df472af618d620f0996f39"
+                "url": "https://github.com/shetabit/multipay.git",
+                "reference": "652492cec95b70e0968b5c6ffd196d07dbed049c"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/shetabit/payment/zipball/5dfa20534b76e318f8df472af618d620f0996f39",
-                "reference": "5dfa20534b76e318f8df472af618d620f0996f39",
+                "url": "https://api.github.com/repos/shetabit/multipay/zipball/652492cec95b70e0968b5c6ffd196d07dbed049c",
+                "reference": "652492cec95b70e0968b5c6ffd196d07dbed049c",
                 "shasum": ""
             },
             "require": {
                 "guzzlehttp/guzzle": ">=6.2",
-                "illuminate/broadcasting": "^5.8|^6.0|^7.0",
-                "illuminate/support": "^5.8|^6.0|^7.0",
+                "nesbot/carbon": "^1.39|^2.0",
                 "php": ">=7.2",
                 "ramsey/uuid": "^3.7|^3.8|^3.9|^4.0"
             },
             "require-dev": {
-                "orchestra/testbench": "^4.3|^5.0",
                 "phpunit/phpunit": "^8.0|^9.0",
                 "squizlabs/php_codesniffer": "^3.5"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Shetabit\\Multipay\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Mahdi Khanzadi",
+                    "email": "khanzadimahdi@gmail.com",
+                    "homepage": "https://github.com/shetabit",
+                    "role": "Developer"
+                }
+            ],
+            "description": "PHP Payment Gateway Integration Package",
+            "homepage": "https://github.com/shetabit/multipay",
+            "keywords": [
+                "Bank",
+                "Meli",
+                "Payline",
+                "gateway",
+                "iranKish payment gateway",
+                "irankish",
+                "jahanPay payment gateway",
+                "jahanpay",
+                "jibit",
+                "jibit payment gateway",
+                "meli payment gateway",
+                "mellat",
+                "mellat payment gateway",
+                "melli",
+                "parsian",
+                "parsian payment gateway",
+                "pasargad",
+                "pasargad payment gateway",
+                "pay",
+                "pay payment gateway",
+                "payline payment gateway",
+                "payment",
+                "payment gateway",
+                "paypal",
+                "paypal payment gateway",
+                "php iranKish",
+                "php iranKish package",
+                "php jahanPay",
+                "php jahanPay package",
+                "php jibit",
+                "php jibit package",
+                "php meli",
+                "php meli package",
+                "php mellat",
+                "php mellat package",
+                "php melli bank payment package",
+                "php parsian",
+                "php parsian package",
+                "php pasargad",
+                "php pasargad package",
+                "php pay",
+                "php pay package",
+                "php payline",
+                "php payline package",
+                "php payment gateway",
+                "php payment package",
+                "php paypal",
+                "php paypal package",
+                "php sadad",
+                "php sadad package",
+                "php saderat",
+                "php saderat package",
+                "php saman",
+                "php saman package",
+                "php shaparak",
+                "php shaparak package",
+                "php zarinpal",
+                "php zarinpal package",
+                "sadad",
+                "sadad payment gateway",
+                "saderat",
+                "saderat payment gateway",
+                "saman",
+                "saman payment gateway",
+                "shaparak",
+                "shaparak payment gateway",
+                "shetabit",
+                "zarinpal",
+                "zarinpal payment gateway"
+            ],
+            "support": {
+                "issues": "https://github.com/shetabit/multipay/issues",
+                "source": "https://github.com/shetabit/multipay/tree/v1.3.0"
+            },
+            "time": "2021-01-29T08:03:20+00:00"
+        },
+        {
+            "name": "shetabit/payment",
+            "version": "v4.0.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/shetabit/payment.git",
+                "reference": "310a45ef0317f15d70940feb44a9203d15d55498"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/shetabit/payment/zipball/310a45ef0317f15d70940feb44a9203d15d55498",
+                "reference": "310a45ef0317f15d70940feb44a9203d15d55498",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/broadcasting": "^5.0|^6.0|^7.0|^8.0",
+                "illuminate/support": "^5.0|^6.0|^7.0|^8.0",
+                "php": ">=7.2",
+                "shetabit/multipay": "^1.0"
+            },
+            "require-dev": {
+                "orchestra/testbench": "^3.0|^4.0|^5.0",
+                "phpunit/phpunit": "^6.0|^7.0|^8.0|^9.0",
+                "squizlabs/php_codesniffer": "^3.5"
+            },
+            "suggest": {
+                "ext-soap": "Needed to support some drivers that required SOAP"
             },
             "type": "library",
             "extra": {
@@ -3014,7 +3137,11 @@
                 "zarinpal",
                 "zarinpal payment gateway"
             ],
-            "time": "2020-06-07T14:24:19+00:00"
+            "support": {
+                "issues": "https://github.com/shetabit/payment/issues",
+                "source": "https://github.com/shetabit/payment/tree/v4.0.3"
+            },
+            "time": "2021-01-24T10:34:59+00:00"
         },
         {
             "name": "spatie/eloquent-sortable",
@@ -8440,5 +8567,6 @@
     "platform": {
         "php": "^7.2.5"
     },
-    "platform-dev": []
+    "platform-dev": [],
+    "plugin-api-version": "2.0.0"
 }

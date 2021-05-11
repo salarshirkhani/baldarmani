@@ -1,135 +1,189 @@
 @extends('layouts.front')
 @section('content')
-<link rel="stylesheet" href="{{ asset('css/COMPONENTS.css') }}" >
-<link rel="stylesheet" href="{{ asset('css/default.css') }}" >
-<link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}" >
-<div class="c-layout-page">
-	<div class="c-layout-breadcrumbs-1 c-subtitle c-fonts-uppercase c-fonts-bold c-bordered c-bordered-both">
-		<div class="container">
-			<div class="c-page-title c-pull-right">
-				<h1 class="c-font-sbold">محصولات</h1>
-			</div>
-			<ul class="c-page-breadcrumbs c-theme-nav c-pull-left c-fonts-regular">
-				<li><a href="https://www.leadermedica.com/">خانه</a></li>
-				<li>/</li><li><a href="https://www.leadermedica.com/bio-medical/" title="">ایمپلنت دندان</a></li><li>/</li><li><a href="https://www.leadermedica.com/bio-medical/cranioplastica/" title="">ایمپلنت نمونه 2</a></li>	
-			</ul>
+<link rel="stylesheet" href="{{asset('css/vendor/jquery-ui.min.css')}}">
+<link rel="stylesheet" href="{{asset('css/custom/main.css')}}">
+<link rel="stylesheet" href="{{asset('css/custom/rightbar-details.css')}}">
+<section class="single-banner">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="single-content">
+                    <h2>جزئیات محصولات</h2>
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="index.html">صفحه اصلی</a>
+                        </li>
+                        <li class="breadcrumb-item">
+                            <a href="rightbar-list.html">محصولات</a>
+                        </li>
+                        <li class="breadcrumb-item active" aria-current="page">جزئیات محصولات</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="ad-details-part">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8">
+                <div class="ad-details-card">
+                    <div class="ad-details-breadcrumb">
+                        <ol class="breadcrumb">
+                            <li>
+                                <span class="flat-badge sale">برای فروش ویژه</span>
+                            </li>
+                            <li class="breadcrumb-item">
+                                <a href="#">محصولات </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">خانه </li>
+                        </ol>
+                    </div>
+                    <div class="ad-details-heading">
+                        <h2>
+                            <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
+                        </h2>
+                    </div>
+                    <ul class="ad-details-meta">
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-eye"></i>
+                                <p>
+                                    پیش نمایش <span>(134)</span>
+                                </p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#">
+                                <i class="fas fa-mouse"></i>
+                                <p>
+                                    کلیک <span>(76)</span>
+                                </p>
+                            </a>
+                        </li>
+                    </ul>
+                    <div class="ad-details-slider slider-arrow">
+                        <div>
+                            <img src="images/product/03.jpg" alt="details">
+                        </div>
+                    </div>
 
-		</div>
-	</div>
-<div class="container c-margin-t-50">
-				<div class="row c-margin-b-40">
-		<div class="c-content-product-2 c-bg-white">
-			<div class="col-sm-3 col-md-3 wow animate slideInLeft" style="visibility: visible; animation-name: slideInLeft; opacity: 1;">
-				<div class="c-content-overlay">
-					<div class="c-overlay-wrapper">
-						<div class="c-overlay-content">
-							<a href="https://www.leadermedica.com/bio-medical/cranioplastica/mesh/" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">مشاهده بیشتر</a>
-						</div>
-					</div>
-					<div class="c-bg-img-center c-overlay-object">
-						<img src="images/tismart4.jpg" alt="" class="img-responsive">
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-9 col-md-9 wow animate slideInUp" style="visibility: visible; animation-name: slideInUp; opacity: 1;">
-				<div class="c-info-list">
-					<h3 class="c-title c-font-bold c-font-22 c-font-dark">
-						<a class="c-theme-link" href="https://www.leadermedica.com/bio-medical/cranioplastica/mesh/">نام محصول در اینجا</a>
-					</h3>
-					<p class="c-desc c-font-16 c-font-thin">اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند.</p>
-				</div>
-				<div>
-					<a href="https://www.leadermedica.com/bio-medical/cranioplastica/mesh/" class="btn btn-sm c-theme-btn c-btn-square c-btn-uppercase c-btn-bold pull-right">
-						مشاهده محصول					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-			<div class="row c-margin-b-40">
-		<div class="c-content-product-2 c-bg-white">
-			<div class="col-sm-3 col-md-3 wow animate slideInLeft" style="visibility: visible; animation-name: slideInLeft; opacity: 1;">
-				<div class="c-content-overlay">
-					<div class="c-overlay-wrapper">
-						<div class="c-overlay-content">
-							<a href="https://www.leadermedica.com/bio-medical/cranioplastica/placche-neuro/" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">مشاهده بیشتر</a>
-						</div>
-					</div>
-					<div class="c-bg-img-center c-overlay-object">
-						<img src="images/tismart4.jpg" alt="" class="img-responsive">
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-9 col-md-9 wow animate slideInUp" style="visibility: visible; animation-name: slideInUp; opacity: 1;">
-				<div class="c-info-list">
-						<h3 class="c-title c-font-bold c-font-22 c-font-dark">
-						<a class="c-theme-link" href="https://www.leadermedica.com/bio-medical/cranioplastica/mesh/">نام محصول در اینجا</a>
-					</h3>
-					<p class="c-desc c-font-16 c-font-thin">اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند.</p>
-				</div>
-				<div>
-					<a href="https://www.leadermedica.com/bio-medical/cranioplastica/placche-neuro/" class="btn btn-sm c-theme-btn c-btn-square c-btn-uppercase c-btn-bold pull-right">
-						مشاهده محصول				</a>
-				</div>
-			</div>
-		</div>
-	</div>
-			<div class="row c-margin-b-40">
-		<div class="c-content-product-2 c-bg-white">
-			<div class="col-sm-3 col-md-3 wow animate slideInLeft" style="visibility: visible; animation-name: slideInLeft; opacity: 1;">
-				<div class="c-content-overlay">
-					<div class="c-overlay-wrapper">
-						<div class="c-overlay-content">
-							<a href="https://www.leadermedica.com/bio-medical/cranioplastica/placche-cmf/" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">مشاهده بیشتر</a>
-						</div>
-					</div>
-					<div class="c-bg-img-center c-overlay-object">
-						<img src="images/tismart4.jpg" alt="" class="img-responsive">
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-9 col-md-9 wow animate slideInUp" style="visibility: visible; animation-name: slideInUp; opacity: 1;">
-				<div class="c-info-list">
-						<h3 class="c-title c-font-bold c-font-22 c-font-dark">
-						<a class="c-theme-link" href="https://www.leadermedica.com/bio-medical/cranioplastica/mesh/">نام محصول در اینجا</a>
-					</h3>
-					<p class="c-desc c-font-16 c-font-thin">اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند.</p>
-				</div>
-				<div>
-					<a href="https://www.leadermedica.com/bio-medical/cranioplastica/placche-cmf/" class="btn btn-sm c-theme-btn c-btn-square c-btn-uppercase c-btn-bold pull-right">
-						مشاهده محصول					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-			<div class="row c-margin-b-40">
-		<div class="c-content-product-2 c-bg-white">
-			<div class="col-sm-3 col-md-3 wow animate slideInLeft" style="visibility: visible; animation-name: slideInLeft; opacity: 1;">
-				<div class="c-content-overlay">
-					<div class="c-overlay-wrapper">
-						<div class="c-overlay-content">
-							<a href="https://www.leadermedica.com/bio-medical/cranioplastica/strumentario-cranio/" class="btn btn-md c-btn-grey-1 c-btn-uppercase c-btn-bold c-btn-border-1x c-btn-square">مشاهده بیشتر</a>
-						</div>
-					</div>
-					<div class="c-bg-img-center c-overlay-object">
-						<img src="images/tismart4.jpg" alt="" class="img-responsive">
-					</div>
-				</div>
-			</div>
-			<div class="col-sm-9 col-md-9 wow animate slideInUp" style="visibility: visible; animation-name: slideInUp; opacity: 1;">
-				<div class="c-info-list">
-						<h3 class="c-title c-font-bold c-font-22 c-font-dark">
-						<a class="c-theme-link" href="https://www.leadermedica.com/bio-medical/cranioplastica/mesh/">نام محصول در اینجا</a>
-					</h3>
-					<p class="c-desc c-font-16 c-font-thin">اگر شما یک طراح هستین و یا با طراحی های گرافیکی سروکار دارید به متن های برخورده اید که با نام لورم ایپسوم شناخته می‌شوند.</p>
-				</div>
-				<div>
-					<a href="https://www.leadermedica.com/bio-medical/cranioplastica/strumentario-cranio/" class="btn btn-sm c-theme-btn c-btn-square c-btn-uppercase c-btn-bold pull-right">
-						مشاهده محصول				</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	</div>
-</div>
-
+                    <div class="ad-details-action">
+                        <ul>
+                            <li>
+                                <button type="button">
+                                    <i class="fas fa-share-alt"></i>
+                                    <span>اشتراک </span>
+                                </button>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ad-details-card">
+                    <div class="ad-details-title">
+                        <h5>مشخصات </h5>
+                    </div>
+                    <div class="ad-details-specific">
+                        <ul>
+                            <li>
+                                <h6>قیمت: </h6>
+                                <p>20900 تومان</p>
+                            </li>
+                            <li>
+                                <h6>نویسنده:</h6>
+                                <p>عباس بوعزا </p>
+                            </li>
+                            <li>
+                                <h6>منتشر شده:</h6>
+                                <p>دی 1399</p>
+                            </li>
+                            <li>
+                                <h6>انتشارات: </h6>
+                                <p>تهران</p>
+                            </li>
+                            <li>
+                                <h6>دسته بندی:</h6>
+                                <p>محبوبیت </p>
+                            </li>
+                            <li>
+                                <h6>وضعیت:</h6>
+                                <p>استفاده شده</p>
+                            </li>
+                            <li>
+                                <h6>نوع قیمت:</h6>
+                                <p>قابل معامله </p>
+                            </li>
+                            <li>
+                                <h6>نوع محصول:</h6>
+                                <p>ویژه</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="ad-details-card">
+                    <div class="ad-details-title">
+                        <h5>توضیحات </h5>
+                    </div>
+                    <div class="ad-details-descrip">
+                        <p>
+                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد..<span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت.</span>
+                        </p>
+                    </div>
+                </div>
+                <!-- YOU CAN ADD ANOTHER BOX HERE -->
+            </div>
+            <div class="col-lg-4">
+                <div class="ad-details-price">
+                    <h5>23000 تومان</h5>
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <button class="ad-details-number">
+                    <i class="fas fa-cart-arrow-down"></i>
+                    <span>خرید محصول</span>
+                </button>
+                <div class="ad-details-card">
+                    <div class="ad-details-title">
+                        <h5>ساعات کاری</h5>
+                    </div>
+                    <div class="ad-details-opening">
+                        <ul>
+                            <li>
+                                <h6>شنبه </h6>
+                                <p>09:00 صبح  - 05:00 بعد ظهر</p>
+                            </li>
+                            <li>
+                                <h6>یکشنبه </h6>
+                                <p>09:00 صبح  - 05:00 بعد ظهر</p>
+                            </li>
+                            <li>
+                                <h6>دوشنبه </h6>
+                                <p>09:00 صبح  - 05:00 بعد ظهر</p>
+                            </li>
+                            <li>
+                                <h6>سه شنبه </h6>
+                                <p>09:00 صبح  - 05:00 بعد ظهر</p>
+                            </li>
+                            <li>
+                                <h6>چهارشنبه </h6>
+                                <p>09:00 صبح  - 05:00 بعد ظهر</p>
+                            </li>
+                            <li>
+                                <h6>پنجشنبه </h6>
+                                <p>09:00 صبح  - 05:00 بعد ظهر</p>
+                            </li>
+                            <li>
+                                <h6>جمعه </h6>
+                                <p>بسته</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script src="{{asset('js/vendor/jquery-ui.min.js')}}"></script>
+<script src="{{asset('js/custom/price-range.js')}}"></script>
+<script src="{{asset('js/vendor/slick.min.js')}}"></script>
+<script src="{{asset('js/custom/slick.js')}}"></script>
 @endsection

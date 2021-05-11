@@ -16,7 +16,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index')->name('/');
 Route::get('products', 'FrontController@products')->name('products');
-Route::get('single', 'FrontController@Sproduct')->name('single');
+Route::get('product', 'FrontController@Sproduct')->name('product');
+Route::get('blog', 'FrontController@blog')->name('blog');
+Route::get('single', 'FrontController@single')->name('single');
+Route::get('contact', 'FrontController@contact')->name('contact');
 
 Auth::routes();
 
@@ -52,6 +55,11 @@ Route::prefix('dashboard')
  
                 //Category Controller 
                 Route::resource("categories", "CategoryController");
+
+                //Consultant Controller
+                Route::get('consultant/manage', 'ConsultantController@GetManagePost')->name('consultant.manage');
+                Route::get('consultant/show/{id}','ConsultantController@ShowPost')->name('consultant.show'); 
+                Route::post('consultant/answer/{id}','ConsultantController@AnswerPost')->name('consultant.answer'); 
            
             });
 
@@ -61,16 +69,11 @@ Route::prefix('dashboard')
             ->namespace('Customer')
             ->group(function() {
                 Route::get('', 'IndexController@get')->name('index');
-                Route::get('search', 'SearchController@search')->name('search');
 
+                Route::post('consultant/create', ['uses' => 'ConsultantController@CreatePost','as' => 'consultant.create' ]);
+                Route::get('consultant/create', ['uses' => 'ConsultantController@GetCreatePost','as' => 'consultant.create']); 
+                Route::get('consultant/manage', 'ConsultantController@GetManagePost')->name('consultant.manage');
+                Route::get('consultant/show/{id}','ConsultantController@ShowPost')->name('consultant.show'); 
             });
 
-        Route::prefix('owner')
-            ->name('owner.')
-            ->middleware('user_type:seller')
-            ->namespace('Owner')
-            ->group(function() {
-                Route::get('', 'IndexController@get')->name('index');
-
-     });
     });

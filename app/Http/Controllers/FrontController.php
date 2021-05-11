@@ -19,13 +19,31 @@ class FrontController extends Controller
 
     public function products() {
 
-        return view('product');
+        return view('shop');
 
     }
 
     public function Sproduct() {
 
-        return view('single-product');
+        return view('product');
+
+    }
+
+    public function blog() {
+
+        return view('blog');
+
+    }
+
+    public function single() {
+
+        return view('single');
+
+    }
+
+    public function contact() {
+
+        return view('contact');
 
     }
 
