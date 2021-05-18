@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index')->name('/');
 Route::get('products', 'FrontController@products')->name('products');
-Route::get('product', 'FrontController@Sproduct')->name('product');
+Route::get('product/{id}', 'FrontController@Sproduct')->name('product');
 Route::get('blog', 'FrontController@blog')->name('blog');
-Route::get('single', 'FrontController@single')->name('single');
+Route::get('single/{id}', 'FrontController@single')->name('single');
 Route::get('contact', 'FrontController@contact')->name('contact');
+Route::get('search', 'FrontController@search')->name('search');
 
 Auth::routes();
 

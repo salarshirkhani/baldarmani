@@ -45,48 +45,12 @@
                             </li>
                         </ul>
                     </div>
-                    <form class="header-search">
+                    <form action="{{route('search')}}" class="header-search">
                         <div class="header-main-search">
                             <button type="submit" class="header-search-btn">
                                 <i class="fas fa-search"></i>
                             </button>
-                            <input type="text" class="form-control" placeholder="چیزی که دوست داری را جستجو کن ...">
-                            <button type="button" class="header-option-btn tooltip">
-                                <i class="fas fa-sliders-h"></i>
-                                <span class="tooltext left">گزینه فیلتر</span>
-                            </button>
-                        </div>
-                        <div class="header-search-option">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="شهر">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="منطقه">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <input type="text" class="form-control" placeholder="دسته بندی">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <input type="number" class="form-control" placeholder="قیمت">
-                                    </div>
-                                </div>
-                                <div class="col-12">
-                                    <div class="form-btn">
-                                        <button type="submit" class="btn btn-inline">
-                                            <i class="fas fa-search"></i>
-                                            <span>جستجو کنید</span>
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
+                            <input type="text" name="q" class="form-control" placeholder="چیزی که دوست داری را جستجو کن ..."  autocomplete="off">
                         </div>
                     </form>
                     <div class="header-right">

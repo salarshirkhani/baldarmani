@@ -8,7 +8,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="single-content">
-                    <h2>جزئیات محصولات</h2>
+                    <h2>{{$item->name}}</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
                             <a href="index.html">صفحه اصلی</a>
@@ -16,7 +16,7 @@
                         <li class="breadcrumb-item">
                             <a href="rightbar-list.html">محصولات</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">جزئیات محصولات</li>
+                        <li class="breadcrumb-item active" aria-current="page">{{$item->name}}</li>
                     </ol>
                 </div>
             </div>
@@ -41,30 +41,12 @@
                     </div>
                     <div class="ad-details-heading">
                         <h2>
-                            <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
+                            <a href="{{route('product',['id'=>$item->id])}}">{{$item->name}}</a>
                         </h2>
                     </div>
-                    <ul class="ad-details-meta">
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-eye"></i>
-                                <p>
-                                    پیش نمایش <span>(134)</span>
-                                </p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-mouse"></i>
-                                <p>
-                                    کلیک <span>(76)</span>
-                                </p>
-                            </a>
-                        </li>
-                    </ul>
                     <div class="ad-details-slider slider-arrow">
                         <div>
-                            <img src="images/product/03.jpg" alt="details">
+                            <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->name}}">
                         </div>
                     </div>
 
@@ -125,16 +107,14 @@
                         <h5>توضیحات </h5>
                     </div>
                     <div class="ad-details-descrip">
-                        <p>
-                            لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت و سه درصد گذشته، حال و آینده شناخت فراوان جامعه و متخصصان را می طلبد تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی و فرهنگ پیشرو در زبان فارسی ایجاد کرد. در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها و شرایط سخت تایپ به پایان رسد وزمان مورد نیاز شامل حروفچینی دستاوردهای اصلی و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد..<span>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد. کتابهای زیادی در شصت.</span>
-                        </p>
+                        {{$item->content}}
                     </div>
                 </div>
                 <!-- YOU CAN ADD ANOTHER BOX HERE -->
             </div>
             <div class="col-lg-4">
                 <div class="ad-details-price">
-                    <h5>23000 تومان</h5>
+                    <h5>{{$item->price}} تومان</h5>
                     <i class="fas fa-wallet"></i>
                 </div>
                 <button class="ad-details-number">

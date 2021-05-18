@@ -79,10 +79,11 @@
                     </div>
                     <div class="col-md-7 col-lg-7">
                         <div class="feature-item-slider slider-arrow">
+                            @foreach($posts as $item) 
                             <div class="feature-card">
                                 <div class="feature-img">
                                     <a href="#">
-                                        <img src="images/product/10.jpg" alt="feature">
+                                        <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->title}}">
                                     </a>
                                 </div>
                                 <div class="feature-badge">
@@ -101,166 +102,34 @@
                                         <li class="breadcrumb-item">
                                             <a href="#">گجت </a>
                                         </li>
-                                        <li class="breadcrumb-item active" aria-current="page">آیفون </li>
+                                        <li class="breadcrumb-item active" aria-current="page">{{$item->title}} </li>
                                     </ol>
                                     <div class="feature-title">
                                         <h3>
-                                            <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
+                                            <a href="#">{{$item->title}}</a>
                                         </h3>
                                     </div>
                                     <ul class="feature-meta">
                                         <li>
                                             <span>
-                                                <small>توسط علی صالحی</small>
+                                                <small>توسط {{$item->writer}}</small>
                                             </span>
                                         </li>
                                         <li>
                                             <i class="fas fa-clock"></i>
-                                            <span>56 دقیقه قبل</span>
+                                            <span>{{$item->created_at}}</span>
                                         </li>
                                     </ul>
                                 </div>
                             </div>
-                            <div class="feature-card">
-                                <div class="feature-img">
-                                    <a href="#">
-                                        <img src="images/product/01.jpg" alt="feature">
-                                    </a>
-                                </div>
-                                <div class="feature-badge">
-                                    <p>ویژه </p>
-                                </div>
-                                <div class="feature-bookmark">
-                                    <button type="button">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                </div>
-                                <div class="feature-content">
-                                    <ol class="breadcrumb">
-                                        <li>
-                                            <span class="feature-cate sale">ویژه </span>
-                                        </li>
-                                        <li class="breadcrumb-item">
-                                            <a href="#">گجت </a>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">آیفون </li>
-                                    </ol>
-                                    <div class="feature-title">
-                                        <h3>
-                                            <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                        </h3>
-                                    </div>
-                                    <ul class="feature-meta">
-                                        <li>
-                                            <span>
-                                                <small>توسط علی صالحی</small>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i>
-                                            <span>56 دقیقه قبل</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-img">
-                                    <a href="#">
-                                        <img src="images/product/08.jpg" alt="feature">
-                                    </a>
-                                </div>
-                                <div class="feature-badge">
-                                    <p>ویژه </p>
-                                </div>
-                                <div class="feature-bookmark">
-                                    <button type="button">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                </div>
-                                <div class="feature-content">
-                                    <ol class="breadcrumb">
-                                        <li>
-                                            <span class="feature-cate sale">ویژه </span>
-                                        </li>
-                                        <li class="breadcrumb-item">
-                                            <a href="#">گجت </a>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">آیفون </li>
-                                    </ol>
-                                    <div class="feature-title">
-                                        <h3>
-                                            <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                        </h3>
-                                    </div>
-                                    <ul class="feature-meta">
-                                        <li>
-                                            <span>
-                                                <small>توسط علی صالحی</small>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i>
-                                            <span>56 دقیقه قبل</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
-                            <div class="feature-card">
-                                <div class="feature-img">
-                                    <a href="#">
-                                        <img src="images/product/06.jpg" alt="feature">
-                                    </a>
-                                </div>
-                                <div class="feature-badge">
-                                    <p>ویژه </p>
-                                </div>
-                                <div class="feature-bookmark">
-                                    <button type="button">
-                                        <i class="fas fa-heart"></i>
-                                    </button>
-                                </div>
-                                <div class="feature-content">
-                                    <ol class="breadcrumb">
-                                        <li>
-                                            <span class="feature-cate sale">ویژه </span>
-                                        </li>
-                                        <li class="breadcrumb-item">
-                                            <a href="#">گجت </a>
-                                        </li>
-                                        <li class="breadcrumb-item active" aria-current="page">آیفون </li>
-                                    </ol>
-                                    <div class="feature-title">
-                                        <h3>
-                                            <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                        </h3>
-                                    </div>
-                                    <ul class="feature-meta">
-                                        <li>
-                                            <span>
-                                                <small>توسط علی صالحی</small>
-                                            </span>
-                                        </li>
-                                        <li>
-                                            <i class="fas fa-clock"></i>
-                                            <span>56 دقیقه قبل</span>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            @endforeach
                         </div>
                         <div class="feature-thumb-slider">
+                            @foreach($posts as $item) 
                             <div>
-                                <img src="images/product/10.jpg" alt="feature">
+                                <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->title}}">
                             </div>
-                            <div>
-                                <img src="images/product/01.jpg" alt="feature">
-                            </div>
-                            <div>
-                                <img src="images/product/08.jpg" alt="feature">
-                            </div>
-                            <div>
-                                <img src="images/product/06.jpg" alt="feature">
-                            </div>
+                            @endforeach
                         </div>
                     </div>
                 </div>
@@ -281,9 +150,10 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="recomend-slider slider-arrow">
+                            @foreach($products as $item)  
                             <div class="product-card">
                                  <div class="product-head">
-                                    <div class="product-img" style="background:url(images/product/03.jpg) no-repeat center; background-size:cover;">
+                                    <div class="product-img" style="background:url({{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}) no-repeat center; background-size:cover;">
                                         <i class="cross-badge fas fa-bolt"></i>
                                         <span class="flat-badge sale">ویژه </span>
                                         <ul class="product-meta">
@@ -292,10 +162,6 @@
                                                 <p>264</p>
                                             </li>
                                             <li>
-                                                <i class="fas fa-mouse"></i>
-                                                <p>134</p>
-                                            </li>
-                                            <li>
                                                 <i class="fas fa-star"></i>
                                                 <p>4.5/7</p>
                                             </li>
@@ -307,300 +173,31 @@
                                         <i class="fas fa-tags"></i>
                                         <ol class="breadcrumb">
                                             <li class="breadcrumb-item">
-                                                <a href="#">ثابت </a>
+                                                <a href="#">محصولات </a>
                                             </li>
                                             <li class="breadcrumb-item active" aria-current="page">کتاب ها </li>
                                         </ol>
                                     </div>
                                     <div class="product-title">
                                         <h5>
-                                            <a href="rightbar-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</a>
+                                            <a href="{{route('product',['id'=>$item->id])}}">{!! \Illuminate\Support\Str::limit($item->explain, 70, ' ...') !!}</a>
                                         </h5>
 										<ul class="product-location">
                                             <li>
                                                 <i class="fas fa-clock"></i>
-                                                <p>30 دقیقه قبل</p>
+                                                <p>{{$item->created_at}}</p>
                                             </li>
                                         </ul>
                                     </div>
                                     <div class="product-details">
                                         <div class="product-price">
-                                            <h5>47000 تومان</h5>
-                                            <span>/ با تخیف</span>
+                                            <h5>{{$item->price}} تومان</h5>
                                         </div>
-                                        <ul class="product-widget">
-                                            <li>
-                                                <a href="compare.html" class="tooltip">
-                                                    <i class="fas fa-compress"></i>
-                                                    <span class="tooltext top">مقایسه کردن </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <button class="tooltip">
-                                                    <i class="far fa-heart"></i>
-                                                    <span class="tooltext top">نشانک </span>
-                                                </button>
-                                            </li>
-                                        </ul>
+
                                     </div>
                                 </div>
                             </div>
-                            <div class="product-card">
-                                <div class="product-head">
-                                    <div class="product-img" style="background:url(images/product/03.jpg) no-repeat center; background-size:cover;">
-                                        <i class="cross-badge fas fa-bolt"></i>
-                                        <span class="flat-badge sale">ویژه </span>
-                                        <ul class="product-meta">
-                                            <li>
-                                                <i class="fas fa-eye"></i>
-                                                <p>264</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-mouse"></i>
-                                                <p>134</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-star"></i>
-                                                <p>4.5/7</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-tag">
-                                        <i class="fas fa-tags"></i>
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item">
-                                                <a href="#">ثابت </a>
-                                            </li>
-                                            <li class="breadcrumb-item active" aria-current="page">کتاب ها </li>
-                                        </ol>
-                                    </div>
-                                    <div class="product-title">
-                                        <h5>
-                                            <a href="rightbar-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</a>
-                                        </h5>
-										<ul class="product-location">
-                                            <li>
-                                                <i class="fas fa-clock"></i>
-                                                <p>30 دقیقه قبل</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-details">
-                                        <div class="product-price">
-                                            <h5>47000 تومان</h5>
-                                            <span>/ با تخیف</span>
-                                        </div>
-                                        <ul class="product-widget">
-                                            <li>
-                                                <a href="compare.html" class="tooltip">
-                                                    <i class="fas fa-compress"></i>
-                                                    <span class="tooltext top">مقایسه کردن </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <button class="tooltip">
-                                                    <i class="far fa-heart"></i>
-                                                    <span class="tooltext top">نشانک </span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-head">
-                                    <div class="product-img" style="background:url(images/product/10.jpg) no-repeat center; background-size:cover;">
-                                         <i class="cross-badge fas fa-bolt"></i>
-                                        <span class="flat-badge sale">ویژه </span>
-                                        <ul class="product-meta">
-                                            <li>
-                                                <i class="fas fa-eye"></i>
-                                                <p>264</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-mouse"></i>
-                                                <p>134</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-star"></i>
-                                                <p>4.5/7</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-tag">
-                                        <i class="fas fa-tags"></i>
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item">
-                                                <a href="#">ثابت </a>
-                                            </li>
-                                            <li class="breadcrumb-item active" aria-current="page">کتاب ها </li>
-                                        </ol>
-                                    </div>
-                                    <div class="product-title">
-                                        <h5>
-                                            <a href="rightbar-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</a>
-                                        </h5>
-											<ul class="product-location">
-                                            <li>
-                                                <i class="fas fa-clock"></i>
-                                                <p>30 دقیقه قبل</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-details">
-                                        <div class="product-price">
-                                            <h5>47000 تومان</h5>
-                                            <span>/ با تخیف</span>
-                                        </div>
-                                        <ul class="product-widget">
-                                            <li>
-                                                <a href="compare.html" class="tooltip">
-                                                    <i class="fas fa-compress"></i>
-                                                    <span class="tooltext top">مقایسه کردن </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <button class="tooltip">
-                                                    <i class="far fa-heart"></i>
-                                                    <span class="tooltext top">نشانک </span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-head">
-                                    <div class="product-img" style="background:url(images/product/09.jpg) no-repeat center; background-size:cover;">
-                                       <i class="cross-badge fas fa-bolt"></i>
-                                        <span class="flat-badge sale">ویژه </span>
-                                        <ul class="product-meta">
-                                            <li>
-                                                <i class="fas fa-eye"></i>
-                                                <p>264</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-mouse"></i>
-                                                <p>134</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-star"></i>
-                                                <p>4.5/7</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-tag">
-                                        <i class="fas fa-tags"></i>
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item">
-                                                <a href="#">ثابت </a>
-                                            </li>
-                                            <li class="breadcrumb-item active" aria-current="page">کتاب ها </li>
-                                        </ol>
-                                    </div>
-                                    <div class="product-title">
-                                        <h5>
-                                            <a href="rightbar-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</a>
-                                        </h5>
-										<ul class="product-location">
-                                            <li>
-                                                <i class="fas fa-clock"></i>
-                                                <p>30 دقیقه قبل</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-details">
-                                        <div class="product-price">
-                                            <h5>47000 تومان</h5>
-                                            <span>/ با تخیف</span>
-                                        </div>
-                                        <ul class="product-widget">
-                                            <li>
-                                                <a href="compare.html" class="tooltip">
-                                                    <i class="fas fa-compress"></i>
-                                                    <span class="tooltext top">مقایسه کردن </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <button class="tooltip">
-                                                    <i class="far fa-heart"></i>
-                                                    <span class="tooltext top">نشانک </span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="product-card">
-                                <div class="product-head">
-                                    <div class="product-img" style="background:url(images/product/02.jpg) no-repeat center; background-size:cover;">
-									<i class="cross-badge fas fa-bolt"></i>
-                                        <span class="flat-badge sale">ویژه </span>
-                                        <ul class="product-meta">
-                                            <li>
-                                                <i class="fas fa-eye"></i>
-                                                <p>264</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-mouse"></i>
-                                                <p>134</p>
-                                            </li>
-                                            <li>
-                                                <i class="fas fa-star"></i>
-                                                <p>4.5/7</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="product-info">
-                                    <div class="product-tag">
-                                        <i class="fas fa-tags"></i>
-                                        <ol class="breadcrumb">
-                                            <li class="breadcrumb-item">
-                                                <a href="#">ثابت </a>
-                                            </li>
-                                            <li class="breadcrumb-item active" aria-current="page">کتاب ها </li>
-                                        </ol>
-                                    </div>
-                                    <div class="product-title">
-                                        <h5>
-                                            <a href="rightbar-details.html">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.</a>
-                                        </h5>
-                                        <ul class="product-location">
-                                            <li>
-                                                <i class="fas fa-clock"></i>
-                                                <p>30 دقیقه قبل</p>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="product-details">
-                                        <div class="product-price">
-                                            <h5>47000 تومان</h5>
-                                            <span>/ با تخیف</span>
-                                        </div>
-                                        <ul class="product-widget">
-                                            <li>
-                                                <a href="compare.html" class="tooltip">
-                                                    <i class="fas fa-compress"></i>
-                                                    <span class="tooltext top">مقایسه کردن </span>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <button class="tooltip">
-                                                    <i class="far fa-heart"></i>
-                                                    <span class="tooltext top">نشانک </span>
-                                                </button>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                </div>
+                            @endforeach
                             </div>
                         </div>
                     </div>

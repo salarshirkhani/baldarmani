@@ -29,22 +29,11 @@ class PostController extends Controller
         ]);
     //--------------
         $uploadedFile = $request->file('img');
-     $filename = $uploadedFile->getClientOriginalName();
+        $filename = $uploadedFile->getClientOriginalName();
 
-    Storage::disk('local')->putFileAs('/images/'.$filename, $uploadedFile, $filename);
-           $post->pic = $filename;
-           
-         //-------------
-         
-         $uploadedFilee = $request->file('file');  
-         
-        if ($uploadedFilee != NULL) {
-   
-     $filenamee = $uploadedFilee->getClientOriginalName();
+        Storage::disk('local')->putFileAs('/images/'.$filename, $uploadedFile, $filename);
+        $post->pic = $filename;
 
-    Storage::disk('local')->putFileAs('/file/'.$filenamee, $uploadedFilee, $filenamee);
-           $post->file = $filenamee;
-          }
         $post->save();
         return redirect()->route('dashboard.admin.news.create')->with('info', '  پست جدید ذخیره شد و نام آن' . $request->input('title'));
     }

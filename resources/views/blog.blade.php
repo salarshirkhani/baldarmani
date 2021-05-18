@@ -8,12 +8,12 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="single-content">
-                    <h2>لیست وبلاگ</h2>
+                    <h2> وبلاگ</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">صفحه اصلی</a>
+                            <a href="/">صفحه اصلی</a>
                         </li>
-                        <li class="breadcrumb-item active" aria-current="page">لیست وبلاگ</li>
+                        <li class="breadcrumb-item active" aria-current="page"> وبلاگ</li>
                     </ol>
                 </div>
             </div>
@@ -122,39 +122,6 @@
                     <div class="col-md-8 col-lg-12 m-auto">
                         <div class="blog-sidebar">
                             <div class="blog-sidebar-title">
-                                <h5>دسته های برتر</h5>
-                            </div>
-                            <ul class="blog-cate">
-                                <li>
-                                    <h5>
-                                        <a href="#">تکنولوژی</a>
-                                    </h5>
-                                    <p>23</p>
-                                </li>
-                                <li>
-                                    <h5>
-                                        <a href="#">آموزشی</a>
-                                    </h5>
-                                    <p>17</p>
-                                </li>
-                                <li>
-                                    <h5>
-                                        <a href="#">کسب و کار</a>
-                                    </h5>
-                                    <p>09</p>
-                                </li>
-                                <li>
-                                    <h5>
-                                        <a href="#">فریلنسری </a>
-                                    </h5>
-                                    <p>12</p>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-lg-12 m-auto">
-                        <div class="blog-sidebar">
-                            <div class="blog-sidebar-title">
                                 <h5>بهترین برچسب ها</h5>
                             </div>
                             <ul class="blog-tag">
@@ -234,255 +201,47 @@
             </div>
             <div class="col-lg-8">
                 <div class="row">
+                    @foreach($posts as $item) 
                     <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="images/blog/01.jpg" alt="blog">
-                                <div class="blog-overlay">
-                                    <span class="marketing">بازار یابی</span>
-                                </div>
+                                <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->title}}">
                             </div>
                             <div class="blog-content">
-                                <a href="#" class="blog-avatar">
+                                <a href="{{route('single',['id'=>$item->id])}}" class="blog-avatar">
                                     <img src="images/avatar/01.jpg" alt="avatar">
                                 </a>
                                 <ul class="blog-meta">
                                     <li>
                                         <i class="fas fa-user"></i>
                                         <p>
-                                            <a href="#">میلون محمود </a>
+                                            <a href="{{route('single',['id'=>$item->id])}}">{{$item->writer}}</a>
                                         </p>
                                     </li>
                                     <li>
                                         <i class="fas fa-clock"></i>
-                                        <p>بهمن 1399</p>
+                                        <p>{{$item->created_at}}</p>
                                     </li>
                                 </ul>
                                 <div class="blog-text">
                                     <h4>
-                                        <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
+                                        <a href="{{route('single',['id'=>$item->id])}}">{{$item->title}}</a>
                                     </h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است....</p>
-                                </div>
-                                <a href="#" class="blog-read">
+                                    {{$item->explain}}      
+                               </div>
+                                <a href="{{route('single',['id'=>$item->id])}}" class="blog-read">
                                     <span>ادامه مطلب</span>
                                     <i class="fas fa-long-arrow-alt-right"></i>
                                 </a>
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <img src="images/blog/02.jpg" alt="blog">
-                                <div class="blog-overlay">
-                                    <span class="advertise">تبلیغات</span>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <a href="#" class="blog-avatar">
-                                    <img src="images/avatar/02.jpg" alt="avatar">
-                                </a>
-                                <ul class="blog-meta">
-                                    <li>
-                                        <i class="fas fa-user"></i>
-                                        <p>
-                                            <a href="#">علی انصاریان فقید</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-clock"></i>
-                                        <p>بهمن 1399</p>
-                                    </li>
-                                </ul>
-                                <div class="blog-text">
-                                    <h4>
-                                        <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                    </h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است....</p>
-                                </div>
-                                <a href="#" class="blog-read">
-                                    <span>ادامه مطلب</span>
-                                    <i class="fas fa-long-arrow-alt-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <img src="images/blog/03.jpg" alt="blog">
-                                <div class="blog-overlay">
-                                    <span class="safety">ایمنی </span>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <a href="#" class="blog-avatar">
-                                    <img src="images/avatar/03.jpg" alt="avatar">
-                                </a>
-                                <ul class="blog-meta">
-                                    <li>
-                                        <i class="fas fa-user"></i>
-                                        <p>
-                                            <a href="#">میلون محمود </a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-clock"></i>
-                                        <p>بهمن 1399</p>
-                                    </li>
-                                </ul>
-                                <div class="blog-text">
-                                    <h4>
-                                        <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                    </h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است....</p>
-                                </div>
-                                <a href="#" class="blog-read">
-                                    <span>ادامه مطلب</span>
-                                    <i class="fas fa-long-arrow-alt-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <img src="images/blog/04.jpg" alt="blog">
-                                <div class="blog-overlay">
-                                    <span class="security">امنیت </span>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <a href="#" class="blog-avatar">
-                                    <img src="images/avatar/04.jpg" alt="avatar">
-                                </a>
-                                <ul class="blog-meta">
-                                    <li>
-                                        <i class="fas fa-user"></i>
-                                        <p>
-                                            <a href="#">میلون محمود </a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-clock"></i>
-                                        <p>بهمن 1399</p>
-                                    </li>
-                                </ul>
-                                <div class="blog-text">
-                                    <h4>
-                                        <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                    </h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است....</p>
-                                </div>
-                                <a href="#" class="blog-read">
-                                    <span>ادامه مطلب</span>
-                                    <i class="fas fa-long-arrow-alt-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <img src="images/blog/05.jpg" alt="blog">
-                                <div class="blog-overlay">
-                                    <span class="security">امنیت </span>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <a href="#" class="blog-avatar">
-                                    <img src="images/avatar/01.jpg" alt="avatar">
-                                </a>
-                                <ul class="blog-meta">
-                                    <li>
-                                        <i class="fas fa-user"></i>
-                                        <p>
-                                            <a href="#">میلون محمود </a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-clock"></i>
-                                        <p>بهمن 1399</p>
-                                    </li>
-                                </ul>
-                                <div class="blog-text">
-                                    <h4>
-                                        <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                    </h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است....</p>
-                                </div>
-                                <a href="#" class="blog-read">
-                                    <span>ادامه مطلب</span>
-                                    <i class="fas fa-long-arrow-alt-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
-                        <div class="blog-card">
-                            <div class="blog-img">
-                                <img src="images/blog/06.jpg" alt="blog">
-                                <div class="blog-overlay">
-                                    <span class="marketing">بازار یابی</span>
-                                </div>
-                            </div>
-                            <div class="blog-content">
-                                <a href="#" class="blog-avatar">
-                                    <img src="images/avatar/02.jpg" alt="avatar">
-                                </a>
-                                <ul class="blog-meta">
-                                    <li>
-                                        <i class="fas fa-user"></i>
-                                        <p>
-                                            <a href="#">علی انصاریان فقید</a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <i class="fas fa-clock"></i>
-                                        <p>بهمن 1399</p>
-                                    </li>
-                                </ul>
-                                <div class="blog-text">
-                                    <h4>
-                                        <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است..</a>
-                                    </h4>
-                                    <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است.لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است....</p>
-                                </div>
-                                <a href="#" class="blog-read">
-                                    <span>ادامه مطلب</span>
-                                    <i class="fas fa-long-arrow-alt-right"></i>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach                   
                 </div>
                 <div class="row">
                     <div class="col-lg-12">
                         <ul class="pagination">
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <i class="fas fa-long-arrow-alt-left"></i>
-                                </a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link active" href="#">1</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">2</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">3</a>
-                            </li>
-                            <li class="page-item">...</li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">67</a>
-                            </li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">
-                                    <i class="fas fa-long-arrow-alt-right"></i>
-                                </a>
-                            </li>
+                            {{$posts->links()}}
                         </ul>
                     </div>
                 </div>
