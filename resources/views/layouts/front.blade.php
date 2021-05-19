@@ -23,7 +23,7 @@
                     <div class="header-left">
                         <ul class="header-widget">
                             <li>
-                                <button type="button" class="header-menu">
+                                <button type="button" onclick="openNav()" class="header-menu">
                                     <i class="fas fa-align-left"></i>
                                 </button>
                             </li>
@@ -55,7 +55,7 @@
                     </form>
                     <div class="header-right">
                         <ul class="header-widget">
-                            <li>
+                         <!--   <li>
                                 <button class="header-favourite">
                                     <i class="fas fa-heart"></i>
                                     <sup>0</sup>
@@ -72,7 +72,7 @@
                                     <i class="fas fa-envelope"></i>
                                     <sup>0</sup>
                                 </button>
-                            </li>
+                            </li> -->
                         </ul>
                         <a href="{{route('register')}}" class="btn btn-inline">
                             <i class="fas fa-plus-circle"></i>
@@ -82,36 +82,42 @@
                 </div>
             </div>
         </header>
-        <div class="sidebar-part">
+        <div id="sidebar-part">
             <div class="sidebar-body">
                 <div class="sidebar-header">
                     <a href="index.html" class="sidebar-logo">
                         <img src="images/logo.png" alt="logo">
                     </a>
-                    <button class="sidebar-cross">
+                    <button onclick="closeNav()" class="sidebar-cross">
                         <i class="fas fa-times"></i>
                     </button>
                 </div>
                 <div class="sidebar-content">
+                    @if(Auth::check())
                     <div class="sidebar-profile">
-                        <a href="#" class="sidebar-avatar">
-                            <img src="images/avatar/01.jpg" alt="avatar">
-                        </a>
                         <h4>
-                            <a href="#" class="sidebar-name">جکسون هندرسون</a>
+                            <a href="{{route('dashboard')}}" class="sidebar-name">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                         </h4>
-                        <a href="ad-post.html" class="btn btn-inline sidebar-btn">
+                        <a href="{{route('dashboard.customer.index')}}" class="btn btn-inline sidebar-btn">
                             <i class="fas fa-plus-circle"></i>
-                            <span style="font-size: 16px;">ثبت نام</span>
+                            <span style="font-size: 16px;">ورود به پنل کاربری</span>
                         </a>
                     </div>
+                    @else 
+                    <div class="sidebar-profile">
+                        <a href="{{route('login')}}" class="btn btn-inline sidebar-btn">
+                            <i class="fas fa-plus-circle"></i>
+                            <span style="font-size: 16px;">ورود به سایت</span>
+                        </a>
+                    </div>
+                    @endif
                     <div class="sidebar-menu">
                         <ul class="nav nav-tabs">
                             <li>
                                 <a href="#main-menu" class="nav-link active" data-toggle="tab">منوی اصلی </a>
                             </li>
                             <li>
-                                <a href="#author-menu" class="nav-link" data-toggle="tab">منوی نویسنده</a>
+                                <a href="#author-menu" class="nav-link" data-toggle="tab">منوی کاربری</a>
                             </li>
                         </ul>
                         <div class="tab-pane active" id="main-menu">
@@ -120,142 +126,47 @@
                                     <a class="navbar-link" href="index.html">صفحه اصلی</a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>دسته بندی</span>
+                                    <a class="navbar-link" href="{{route('products')}}">
+                                        <span>فروشگاه</span>
                                         <i class="fas fa-plus"></i>
                                     </a>
-                                    <ul class="dropdown-list">
-                                        <li>
-                                            <a class="dropdown-link" href="category-list.html">لیست دسته ها</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="category-details.html">جزئیات دسته</a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="#">
-                                        <span>لیست تبلیغات</span>
+                                        <span>وبلاگ</span>
                                         <i class="fas fa-plus"></i>
                                     </a>
-                                    <ul class="dropdown-list">
-                                        <li>
-                                            <a class="dropdown-link" href="grid-list.html">لیست گرید</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="leftbar-list.html">لیست نوار راست</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="rightbar-list.html">لیست نوار چپ</a>
-                                        </li>
-                                    </ul>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="#">
-                                        <span>جزئیات تبلیغات</span>
+                                        <span>تماس با ما</span>
                                         <i class="fas fa-plus"></i>
                                     </a>
-                                    <ul class="dropdown-list">
-                                        <li>
-                                            <a class="dropdown-link" href="grid-details.html">جزئیات گرید</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="leftbar-details.html">جزئیات نوار راست</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="rightbar-details.html">جزئیات نوار چپ</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>صفحات</span>
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                    <ul class="dropdown-list">
-                                        <li>
-                                            <a class="dropdown-link" href="about.html">درباره ما</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="compare.html">مقایسه تبلیغات</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="cities.html">آگهی توسط شهرها</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="price.html">قیمت گذاری</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="user-form.html">فرم کاربر</a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="404.html">404</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>وبلاگ </span>
-                                        <i class="fas fa-plus"></i>
-                                    </a>
-                                    <ul class="dropdown-list">
-                                        <li>
-                                            <a class="dropdown-link" href="blog-list.html">وبلاگ لیستی </a>
-                                        </li>
-                                        <li>
-                                            <a class="dropdown-link" href="blog-details.html">جزئیات وبلاگ</a>
-                                        </li>
-                                    </ul>
-                                </li>
-                                <li class="navbar-item">
-                                    <a class="navbar-link" href="contact.html">تماس با ما</a>
                                 </li>
                             </ul>
                         </div>
                         <div class="tab-pane" id="author-menu">
                             <ul class="navbar-list">
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="dashboard.html">داشبورد</a>
+                                    <a class="navbar-link" href="{{route('dashboard.customer.index')}}">داشبورد</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="profile.html">پروفایل</a>
+                                    <a class="navbar-link" href="{{route('dashboard.customer.consultant.create')}}">ایجاد درخواست مشاوره</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="ad-post.html">ارسال آگهی </a>
+                                    <a class="navbar-link" href="{{route('dashboard.customer.consultant.manage')}}">درخواست های مشاوره</a>
                                 </li>
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="my-ads.html">تبلیغات من </a>
-                                </li>
-                                <li class="navbar-item">
-                                    <a class="navbar-link" href="setting.html">تنظیمات </a>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="bookmark.html">
-                                        <span>نشانک </span>
-                                        <span>0</span>
-                                    </a>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>پیام </span>
-                                        <span>0</span>
-                                    </a>
-                                </li>
-                                <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
-                                        <span>اعلانات</span>
-                                        <span>0</span>
-                                    </a>
-                                </li>
-                                <li class="navbar-item">
-                                    <a class="navbar-link" href="user-form.html">خروج </a>
+                                    <a href="{{ route('logout') }}"
+                                    onclick="event.preventDefault(); document.getElementById('frm-logout').submit();" class="navbar-link">{{ __('خروج') }}</a>
+                            
                                 </li>
                             </ul>
                         </div>
                     </div>
                     <div class="sidebar-footer">
                         <p>
-                            کلیه حقوق محفوظ است توسط <a href="#">کلاسیک ادز </a>
+                            کلیه حقوق محفوظ است توسط <a href="#">بلع درمانی</a>
                         </p>
                         <p>
                             طراحی توسط <a href="http://webitofa.ir">سالار شیرخانی </a>
@@ -264,22 +175,23 @@
                 </div>
             </div>
         </div>
+
         <div class="btmbar-part">
             <div class="container">
                 <ul class="btmbar-widget">
                     <li>
-                        <a href="user-form.html">
+                        @if(Auth::check())
+                        <a href="{{route('dashboard')}}">
                             <i class="fas fa-user"></i>
-                        </a>
+                        </a>                            
+                        @else
+                        <a href="{{route('login')}}">
+                            <i class="fas fa-user"></i>
+                        </a>                              
+                        @endif
                     </li>
                     <li>
-                        <a href="#">
-                            <i class="fas fa-star"></i>
-                            <sup>0</sup>
-                        </a>
-                    </li>
-                    <li>
-                        <a class="plus-btn" href="ad-post.html">
+                        <a class="plus-btn" href="{{route('register')}}">
                             <i class="fas fa-plus"></i>
                             <span style="font-size: 16px;">ثبت نام</span>
                         </a>
@@ -330,13 +242,13 @@
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <p>
-                                1420 جالکوری غربی فتح الله, <span>نارایانگانج ، بنگلادش</span>
+                                1420 جالکوری غربی فتح الله, <span>تهران</span>
                             </p>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
                             <p>
-                                support@classicads.com <span>info@classicads.com</span>
+                                support@iranmededlp.com <span>info@iranmededlp.com</span>
                             </p>
                         </li>
                         <li>

@@ -980,7 +980,7 @@ textarea.form-control {
 .navbar-link i {
  font-size:10px
 }
-.sidebar-part {
+#sidebar-part {
  position:fixed;
  right:0px;
  top:0px;
@@ -988,7 +988,7 @@ textarea.form-control {
  height:100vh;
  background:rgba(0,0,0,0.7);
  z-index:3;
- visibility:hidden;
+ display:none;
  opacity:0;
  -webkit-transition:all linear .2s;
  transition:all linear .2s
@@ -1010,7 +1010,7 @@ textarea.form-control {
  visibility:visible;
  opacity:1
 }
-.sidebar-part.active .sidebar-body {
+#sidebar-part .sidebar-body {
  right:0px
 }
 .sidebar-header {
@@ -1110,11 +1110,11 @@ textarea.form-control {
  }
 }
 @media (max-width: 575px) {
- .sidebar-part.active {
+ #sidebar-part .active {
   visibility:visible;
   opacity:1
  }
- .sidebar-part.active .sidebar-body {
+ #sidebar-part.active .sidebar-body {
   right:0px;
   width:100%
  }

@@ -102,3 +102,14 @@ function showPanel(_0x32e52f) {
     tabPanel[_0x32e52f]['style']['display'] = _0x4c3155(0x150);
 }
 showPanel(0x0);
+function openNav() {
+    document.getElementById("sidebar-part").style.display = "block";
+    document.getElementById("sidebar-part").style.opacity = "1";
+    element.classList.add("active");
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("sidebar-part").style.display = "none";
+  document.getElementById("sidebar-part").style.opacity = "0";
+  }
