@@ -161,7 +161,8 @@ return [
         Illuminate\Translation\TranslationServiceProvider::class,
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
-
+        Illuminate\Notifications\NotificationServiceProvider::class,
+        Hekmatinasser\Verta\Laravel\VertaServiceProvider::class,
         /*
          * Package Service Providers...
          */
@@ -229,7 +230,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'Smsirlaravel' => Ipecompany\Smsirlaravel\SmsirlaravelFacade::class,
-
+        'Verta' => Hekmatinasser\Verta\Verta::class
     ],
 
 ];

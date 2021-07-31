@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\Dashboard\Admin\CategoryStoreRequest;
 use App\Http\Requests\Dashboard\Admin\CategoryUpdateRequest;
 
-class CategoryController extends Controller
+class PostCategoryController extends Controller
 {
 
     public function index() {
@@ -15,7 +15,7 @@ class CategoryController extends Controller
             'categories' => postcategory::hierarchy(),
         ]);
     }
-
+ 
     public function create() {
         return view('dashboard.admin.postcategories.create', [
             'categories' => postcategory::hierarchy(),
@@ -30,14 +30,14 @@ class CategoryController extends Controller
             ->with('success', 'دسته‌بندی با موفقیت ساخته شد!');
     }
 
-    public function edit(Category $category) {
+    public function edit(postcategory $category) {
         return view('dashboard.admin.postcategories.edit', [
             'category' => $category,
             'categories' => postcategory::hierarchy(),
         ]);
     }
 
-    public function update(CategoryUpdateRequest $request, Category $category) {
+    public function update(CategoryUpdateRequest $request, postcategory $category) {
         $category->fill($data = $request->validated());
         $category->parent_id = $data['parent_id'];
         $category->save();

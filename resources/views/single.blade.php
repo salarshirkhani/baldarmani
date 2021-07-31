@@ -40,7 +40,7 @@
                     <li>
                         <a href="{{route('single',['id'=>$item->id])}}">
                             <i class="far fa-calendar-alt"></i>
-                            <p>{{$item->created_at}}</p>
+                            <p>{!! Facades\Verta::instance($item->created_at)->formatDate() !!}</p>
                         </a>
                     </li>
                     <li>

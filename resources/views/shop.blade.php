@@ -59,7 +59,7 @@
                            <ul class="product-location">
                                <li>
                                    <i class="fas fa-clock"></i>
-                                   <p>{{$item->created_at}}</p>
+                                   <p>{!! Facades\Verta::instance($item->created_at)->formatDate() !!}</p>
                                </li>
                            </ul>
                        </div>

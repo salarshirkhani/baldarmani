@@ -12,11 +12,11 @@ class postcategory extends Model
 
 
     public function parent() {
-        return $this->belongsTo('App\Category', 'parent_id');
+        return $this->belongsTo('App\postcategory', 'parent_id');
     }
 
     public function children() {
-        return $this->hasMany('App\Category', 'parent_id');
+        return $this->hasMany('App\postcategory', 'parent_id');
     }
 
     public function allParent()
@@ -40,7 +40,7 @@ class postcategory extends Model
         return $query
             ->with('allParent')
             ->get()
-            ->sortBy(function (Category $category, $key) {
+            ->sortBy(function (postcategory $category, $key) {
                 $sort = $category->id;
                 $level = 1;
                 $upCategory = $category;

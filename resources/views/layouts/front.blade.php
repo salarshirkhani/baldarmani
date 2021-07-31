@@ -249,19 +249,19 @@
                         <li>
                             <i class="fas fa-map-marker-alt"></i>
                             <p>
-                                1420 جالکوری غربی فتح الله, <span>تهران</span>
+                                اتوبان همت غرب، نرسیده به خروجی دهکده المپیک، روبروی بوستان جوانمردان، بیمارستان نیکان غرب، طبقه دوم، واحد گفتاردرمانی, <span>تهران</span>
                             </p>
                         </li>
                         <li>
                             <i class="fas fa-envelope"></i>
                             <p>
-                                support@iranmededlp.com <span>info@iranmededlp.com</span>
+                                iranmedslp@gmail.com<span>info@iranmededlp.com</span>
                             </p>
                         </li>
                         <li>
                             <i class="fas fa-phone-alt"></i>
                             <p>
-                                +8801838288389 <span>+8801941101915</span>
+                                02147564260 <span>09912508325</span>
                             </p>
                         </li>
                     </ul>
@@ -371,43 +371,8 @@
                 </p>
                 <ul class="social-transparent footer-social">
                     <li>
-                        <a href="#">
-                            <i class="fab fa-facebook-f"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-twitter"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-linkedin-in"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-google-plus-g"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-youtube"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-pinterest-p"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
+                        <a href="https://instagram.com/moayed_salmani_slp">
                             <i class="fab fa-instagram"></i>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <i class="fab fa-dribbble"></i>
                         </a>
                     </li>
                 </ul>

@@ -617,10 +617,12 @@ textarea.form-control {
     color: white;
 }
 .section-center-heading p {
- width:600px;
- margin:0 auto;
- font-size:18px;
- line-height:28px
+    width: 800px;
+    margin: 0 auto;
+        margin-bottom: 0px;
+    font-size: 18px;
+    line-height: 28px;
+    text-align: justify;
 }
 .section-side-heading h2 {
  margin-bottom:15px

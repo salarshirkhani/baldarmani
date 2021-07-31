@@ -4,18 +4,18 @@
 @endsection
 @section('hierarchy')
     <x-breadcrumb-item title="داشبورد" route="dashboard.admin.index" />
-    <x-breadcrumb-item title="افزودن دسته‌بندی" route="dashboard.admin.categories.create" />
+    <x-breadcrumb-item title="افزودن دسته‌بندی" route="dashboard.admin.postcategories.create" />
 @endsection
 @section('content')
     <div class="container">
         <x-session-alerts></x-session-alerts>
-        <form action="{{ route('dashboard.admin.categories.store') }}" method="POST" enctype="multipart/form-data">
+        <form action="{{ route('dashboard.admin.postcategories.store') }}" method="POST" enctype="multipart/form-data">
             @csrf
             <x-card type="info">
                 <x-card-header>مشخصات دسته‌بندی</x-card-header>
 
                 <x-card-body>
-                    @include('dashboard.admin.categories.form')
+                    @include('dashboard.admin.postcategories.form')
                 </x-card-body>
 
                 <x-card-footer>

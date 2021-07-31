@@ -5,7 +5,7 @@
 @section('title', __('داشبورد'))
 @section('hierarchy')
     <x-breadcrumb-item title="داشبورد" route="dashboard.admin.index" />
-    <x-breadcrumb-item title="لیست دسته‌بندی‌ها" route="dashboard.admin.categories.index" />
+    <x-breadcrumb-item title="لیست دسته‌بندی‌ها" route="dashboard.admin.postcategories.index" />
 @endsection
 @section('content')
     <div class="container">
@@ -28,13 +28,16 @@
                             <td>@if(!empty($category->parent_id))@for($i = 2; $i <= $category->level; $i ++)&nbsp;&nbsp;&nbsp;@endfor&#x2500;&#x251c; @endif{{ $category->name }}</td>
                             <td>{{ $category->slug }}</td>
                             <td>
-                                <a href="{{ route('dashboard.admin.categories.edit', $category) }}" class="btn btn-sm btn-primary">ویرایش</a>
+                                <a href="{{ route('dashboard.admin.postcategories.edit', $category) }}" class="btn btn-sm btn-primary">ویرایش</a>
                             </td>
                         </tr>
                     @endforeach
                     </tbody>
                 </table>
             </x-card-body>
+            <x-card-footer>
+                <a href="{{route('dashboard.admin.postcategories.create')}}" class="btn btn-success">ثبت دسته جدید</a>
+            </x-card-footer>
         </x-card>
     </div>
 @endsection
