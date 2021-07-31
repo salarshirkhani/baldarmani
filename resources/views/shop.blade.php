@@ -27,7 +27,7 @@
             <div class="col-sm-6 col-md-4 col-lg-3 card-grid">
                 <div class="product-card">
                     <div class="product-head">
-                       <div class="product-img" style="background:url({{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}) no-repeat center; background-size:cover;">
+                       <div class="product-img" style="background:url({{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}) no-repeat center; background-size:cover;">
                            <i class="cross-badge fas fa-bolt"></i>
                            <span class="flat-badge sale">ویژه </span>
                            <ul class="product-meta">

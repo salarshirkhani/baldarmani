@@ -51,14 +51,14 @@
                     </li>
                 </ul>
                 <div class="blog-details-image">
-                    <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->title}}">
+                    <img src="{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}" alt="{{$item->title}}">
                 </div>
                 <div class="blog-details-content">
                     <div class="description">
                         {{$item->explain}}
                     </div>
                     <div class="sub-content">
-                        {{$item->content}}
+                        {!!$item->content!!}
                 </div>
                 <div class="blog-details-widget">
                     <ul class="tag-list">
@@ -80,28 +80,23 @@
                             <h4>اشتراک:</h4>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://iranmedslp.com/single/{{$item->id}}">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
+                            <a href="https://twitter.com/share?text={{$item->title}}&url=http://iranmedslp.com/single/{{$item->id}}">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fab fa-linkedin-in"></i>
+                            <a href="https://telegram.me/share/url?url=http://iranmedslp.com/single/{{$item->id}}">
+                                <i class="fab fa-telegram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="#">
-                                <i class="fab fa-behance"></i>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fab fa-pinterest-p"></i>
+                            <a href="https://web.whatsapp.com/send?text=http://iranmedslp.com/single/{{$item->id}}">
+                                <i class="fab fa-whatsapp"></i>
                             </a>
                         </li>
                     </ul>
@@ -109,20 +104,20 @@
                 <div class="blog-details-author">
                     <div class="author-intro">
                         <a href="#">
-                            <img src="images/avatar/01.jpg" alt="author">
+                            <img src="{{asset('images/avatar/01.jpg')}}" alt="author">
                         </a>
                         <h4>
-                            <a href="#">میلون محمود </a>
+                            <a href="#">ادمین</a>
                         </h4>
                         <p>
-                            <a href="#">www.mironmahmud.com</a>
+                            <a href="#">www.iranmedslp.com</a>
                         </p>
                     </div>
                     <div class="author-content">
                         <ul>
                             <li>
                                 <a href="#">
-                                    <i class="fab fa-facebook-f"></i>
+                                    <i class="fab fa-telegram"></i>
                                 </a>
                             </li>
                             <li>
@@ -137,12 +132,7 @@
                             </li>
                             <li>
                                 <a href="#">
-                                    <i class="fab fa-behance"></i>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="fab fa-pinterest-p"></i>
+                                    <i class="fab fa-whatsapp"></i>
                                 </a>
                             </li>
                         </ul>
@@ -153,14 +143,14 @@
                     <div class="col-md-6 col-lg-6">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="images/blog/02.jpg" alt="blog">
+                                <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="blog">
                                 <div class="blog-overlay">
                                     <span class="advertise">تبلیغات</span>
                                 </div>
                             </div>
                             <div class="blog-content">
                                 <a href="#" class="blog-avatar">
-                                    <img src="images/avatar/01.jpg" alt="avatar">
+                                    <img src="{{asset('images/avatar/01.jpg')}}" alt="avatar">
                                 </a>
                                 <ul class="blog-meta">
                                     <li>
@@ -190,14 +180,14 @@
                     <div class="col-md-6 col-lg-6">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="images/blog/03.jpg" alt="blog">
+                                <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="blog">
                                 <div class="blog-overlay">
                                     <span class="safety">ایمنی </span>
                                 </div>
                             </div>
                             <div class="blog-content">
                                 <a href="#" class="blog-avatar">
-                                    <img src="images/avatar/02.jpg" alt="avatar">
+                                    <img src="{{asset('images/avatar/01.jpg')}}" alt="avatar">
                                 </a>
                                 <ul class="blog-meta">
                                     <li>

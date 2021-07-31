@@ -30,9 +30,9 @@
                             <div class="blog-sidebar-title">
                                 <h5>جستجو </h5>
                             </div>
-                            <form class="blog-src">
-                                <input type="text" placeholder="جستجو...">
-                                <button>
+                            <form action="{{route('search')}}" class="blog-src">
+                                <input type="text" name="q" placeholder="جستجو...">
+                                <button type="submit">
                                     <i class="fas fa-search"></i>
                                 </button>
                             </form>
@@ -44,117 +44,28 @@
                                 <h5>پست های محبوب</h5>
                             </div>
                             <ul class="blog-suggest">
+                               @foreach($posts as $item)  
                                 <li>
                                     <div class="suggest-img">
-                                        <a href="#">
-                                            <img src="images/blog-suggest/01.jpg" alt="blog">
+                                        <a href="{{route('single',['id'=>$item->id])}}">
+                                            <img src="{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}" alt="{{$item->title}}">
                                         </a>
                                     </div>
                                     <div class="suggest-content">
                                         <div class="suggest-title">
                                             <h4>
-                                                <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .</a>
+                                                <a href="{{route('single',['id'=>$item->id])}}">{{$item->title}}</a>
                                             </h4>
                                         </div>
                                         <div class="suggest-meta">
                                             <div class="suggest-date">
                                                 <i class="far fa-calendar-alt"></i>
-                                                <p>بهمن 1399</p>
-                                            </div>
-                                            <div class="suggest-comment">
-                                                <i class="far fa-comments"></i>
-                                                <p>16</p>
+                                                <p>{{$item->created_at}}</p>
                                             </div>
                                         </div>
                                     </div>
                                 </li>
-                                <li>
-                                    <div class="suggest-img">
-                                        <a href="#">
-                                            <img src="images/blog-suggest/02.jpg" alt="blog">
-                                        </a>
-                                    </div>
-                                    <div class="suggest-content">
-                                        <div class="suggest-title">
-                                            <h4>
-                                                <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .</a>
-                                            </h4>
-                                        </div>
-                                        <div class="suggest-meta">
-                                            <div class="suggest-date">
-                                                <i class="far fa-calendar-alt"></i>
-                                                <p>بهمن 1399</p>
-                                            </div>
-                                            <div class="suggest-comment">
-                                                <i class="far fa-comments"></i>
-                                                <p>13</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="suggest-img">
-                                        <a href="#">
-                                            <img src="images/blog-suggest/03.jpg" alt="blog">
-                                        </a>
-                                    </div>
-                                    <div class="suggest-content">
-                                        <div class="suggest-title">
-                                            <h4>
-                                                <a href="#">لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ .</a>
-                                            </h4>
-                                        </div>
-                                        <div class="suggest-meta">
-                                            <div class="suggest-date">
-                                                <i class="far fa-calendar-alt"></i>
-                                                <p>بهمن 1399</p>
-                                            </div>
-                                            <div class="suggest-comment">
-                                                <i class="far fa-comments"></i>
-                                                <p>19</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-8 col-lg-12 m-auto">
-                        <div class="blog-sidebar">
-                            <div class="blog-sidebar-title">
-                                <h5>بهترین برچسب ها</h5>
-                            </div>
-                            <ul class="blog-tag">
-                                <li>
-                                    <a href="#">دامین ها </a>
-                                </li>
-                                <li>
-                                    <a href="#">ابری </a>
-                                </li>
-                                <li>
-                                    <a href="#">وب </a>
-                                </li>
-                                <li>
-                                    <a href="#">تخفیفی </a>
-                                </li>
-                                <li>
-                                    <a href="#">پشتیبان </a>
-                                </li>
-                                <li>
-                                    <a href="#">پرداختی </a>
-                                </li>
-                                <li>
-                                    <a href="#">فروشگاهی </a>
-                                </li>
-                                <li>
-                                    <a href="#">امنیت </a>
-                                </li>
-                                <li>
-                                    <a href="#">راه حل </a>
-                                </li>
-                                <li>
-                                    <a href="#">پایگاه دانش </a>
-                                </li>
+                                @endforeach       
                             </ul>
                         </div>
                     </div>
@@ -205,7 +116,7 @@
                     <div class="col-sm-10 col-md-6 col-lg-6 m-auto">
                         <div class="blog-card">
                             <div class="blog-img">
-                                <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->title}}">
+                                <img src="{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}" alt="{{$item->title}}">
                             </div>
                             <div class="blog-content">
                                 <a href="{{route('single',['id'=>$item->id])}}" class="blog-avatar">

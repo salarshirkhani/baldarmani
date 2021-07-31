@@ -57,6 +57,9 @@ Route::prefix('dashboard')
                 //Category Controller 
                 Route::resource("categories", "CategoryController");
 
+                //Post Category Controller 
+                Route::resource("postcategories", "PostCategoryController");
+
                 //Consultant Controller
                 Route::get('consultant/manage', 'ConsultantController@GetManagePost')->name('consultant.manage');
                 Route::get('consultant/show/{id}','ConsultantController@ShowPost')->name('consultant.show'); 

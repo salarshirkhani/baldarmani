@@ -46,7 +46,7 @@
                     </div>
                     <div class="ad-details-slider slider-arrow">
                         <div>
-                            <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->name}}">
+                            <img src="{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}" alt="{{$item->name}}">
                         </div>
                     </div>
 
@@ -99,7 +99,7 @@
                                 <h6>نوع محصول:</h6>
                                 <p>ویژه</p>
                             </li>
-                        </ul>
+                        </ul>  
                     </div>
                 </div>
                 <div class="ad-details-card">
@@ -107,7 +107,7 @@
                         <h5>توضیحات </h5>
                     </div>
                     <div class="ad-details-descrip">
-                        {{$item->content}}
+                        {!!$item->content!!}
                     </div>
                 </div>
                 <!-- YOU CAN ADD ANOTHER BOX HERE -->

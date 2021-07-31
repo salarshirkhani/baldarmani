@@ -32,6 +32,14 @@
              <x-card-footer>
                 <button type="submit" style=" margin: 20px 0px; height: 42px;width: 100%;font-size: 20px;"  class="btn btn-primary">ارسال</button>
              </x-card-footer>
+                             <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+                <script type="text/javascript">
+                    CKEDITOR.replace('content', {
+                    // Load the Farsi interface.
+                        language: 'fa'
+                    });
+                    CKFinder.setupCKEditor(null, 'ckfinder/ckfinder.js');
+                </script>
             </form>
     </x-card>
     </div>

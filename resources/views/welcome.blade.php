@@ -83,7 +83,7 @@
                             <div class="feature-card">
                                 <div class="feature-img">
                                     <a href="#">
-                                        <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->title}}">
+                                        <img src="{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}" alt="{{$item->title}}">
                                     </a>
                                 </div>
                                 <div class="feature-badge">
@@ -106,7 +106,7 @@
                                     </ol>
                                     <div class="feature-title">
                                         <h3>
-                                            <a href="#">{{$item->title}}</a>
+                                            <a href="{{route('single',['id'=>$item->id])}}">{{$item->title}}</a>
                                         </h3>
                                     </div>
                                     <ul class="feature-meta">
@@ -127,7 +127,7 @@
                         <div class="feature-thumb-slider">
                             @foreach($posts as $item) 
                             <div>
-                                <img src="{{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}" alt="{{$item->title}}">
+                                <img src="{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}" alt="{{$item->title}}">
                             </div>
                             @endforeach
                         </div>
@@ -153,7 +153,7 @@
                             @foreach($products as $item)  
                             <div class="product-card">
                                  <div class="product-head">
-                                    <div class="product-img" style="background:url({{ Storage::url('images/'.$item->pic.'/'.$item->pic) }}) no-repeat center; background-size:cover;">
+                                    <div class="product-img" style="background:url({{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}) no-repeat center; background-size:cover;">
                                         <i class="cross-badge fas fa-bolt"></i>
                                         <span class="flat-badge sale">ویژه </span>
                                         <ul class="product-meta">
@@ -205,7 +205,7 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="center-50">
-                            <a href="leftbar-list.html" class="btn btn-inline">
+                            <a href="{{route('products')}}" class="btn btn-inline">
                                 <i class="fas fa-eye"></i>
                                 <span>مشاهده تمامی محصولات</span>
                             </a>

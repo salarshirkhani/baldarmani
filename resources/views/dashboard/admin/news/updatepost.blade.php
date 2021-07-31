@@ -23,6 +23,14 @@
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" value="{{ $post->explain }}" name="explain"  placeholder="توضیح کوتاه">
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" value="{{ $post->writer }}" name="writer"  placeholder="نام نویسنده">
             <textarea type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" value="{{ $post->content }}" name="content"  placeholder="توضیحات"></textarea>
+                <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+                <script type="text/javascript">
+                    CKEDITOR.replace('content', {
+                    // Load the Farsi interface.
+                        language: 'fa'
+                    });
+                    CKFinder.setupCKEditor(null, 'ckfinder/ckfinder.js');
+                </script>
             {{ csrf_field() }}
              <x-card-footer>
                 <button type="submit" style=" margin: 20px 0px; height: 42px;width: 100%;font-size: 20px;"  class="btn btn-primary">ارسال</button>

@@ -28,7 +28,7 @@
                     <x-select-item :value="$category->id">@if(!empty($category->parent_id))@for($i = 2; $i <= $category->level; $i ++)&nbsp;&nbsp;&nbsp;@endfor&#x2500;&#x251c; @endif{{ $category->name }}</x-select-item>
                 @endforeach
             </x-select-group>
-            <textarea type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 140px; border-radius: 7px; font-size: 16px;"class="form-control" required name="content"  placeholder="محتوا"></textarea>
+            <textarea type="text" id="content" style="padding:10px; margin: 10px 0px 16px 0px; height: 140px; border-radius: 7px; font-size: 16px;"class="form-control" required name="content"  placeholder="محتوا"></textarea>
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="price"  placeholder="قیمت">
             <input type="file" style="margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; width: 100%; font-size: 16px;" class="dropzone" required name="img">
             <script type="text/javascript">
@@ -52,6 +52,14 @@
                             return 1;
                         }
                     };
+                </script>
+                <script src="https://cdn.ckeditor.com/4.11.2/standard/ckeditor.js"></script>
+                <script type="text/javascript">
+                    CKEDITOR.replace('content', {
+                    // Load the Farsi interface.
+                        language: 'fa'
+                    });
+                    CKFinder.setupCKEditor(null, 'ckfinder/ckfinder.js');
                 </script>
             {{ csrf_field() }}
              <x-card-footer>

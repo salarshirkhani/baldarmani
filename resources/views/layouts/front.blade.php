@@ -33,10 +33,17 @@
                                 </a>
                             </li>
                             <li>
+                                 @if(Auth::check())
+                                <a href="{{route('dashboard.customer.index')}}" class="header-user">
+                                    <i class="fas fa-user"></i>
+                                    <span>پنل </span>
+                                </a>                            
+                                @else
                                 <a href="{{route('login')}}" class="header-user">
                                     <i class="fas fa-user"></i>
                                     <span>ورود</span>
-                                </a>
+                                </a>                            
+                                @endif
                             </li>
                             <li>
                                 <button type="button" class="header-src">
@@ -96,7 +103,7 @@
                     @if(Auth::check())
                     <div class="sidebar-profile">
                         <h4>
-                            <a href="{{route('dashboard')}}" class="sidebar-name">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
+                            <a href="{{route('dashboard.customer.index')}}" class="sidebar-name">{{ Auth::user()->first_name }} {{ Auth::user()->last_name }}</a>
                         </h4>
                         <a href="{{route('dashboard.customer.index')}}" class="btn btn-inline sidebar-btn">
                             <i class="fas fa-plus-circle"></i>
@@ -123,7 +130,7 @@
                         <div class="tab-pane active" id="main-menu">
                             <ul class="navbar-list">
                                 <li class="navbar-item">
-                                    <a class="navbar-link" href="index.html">صفحه اصلی</a>
+                                    <a class="navbar-link" href="{{route('/')}}">صفحه اصلی</a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="{{route('products')}}">
@@ -132,13 +139,13 @@
                                     </a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
+                                    <a class="navbar-link" href="{{route('blog')}}">
                                         <span>وبلاگ</span>
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </li>
                                 <li class="navbar-item navbar-dropdown">
-                                    <a class="navbar-link" href="#">
+                                    <a class="navbar-link" href="{{route('contact')}}">
                                         <span>تماس با ما</span>
                                         <i class="fas fa-plus"></i>
                                     </a>
@@ -166,10 +173,10 @@
                     </div>
                     <div class="sidebar-footer">
                         <p>
-                            کلیه حقوق محفوظ است توسط <a href="#">بلع درمانی</a>
+                            کلیه حقوق محفوظ است توسط <a href="#">آوا وب</a>
                         </p>
                         <p>
-                            طراحی توسط <a href="http://webitofa.ir">سالار شیرخانی </a>
+                            طراحی توسط <a href="http://ava-web.com">سالار شیرخانی </a>
                         </p>
                     </div>
                 </div>
@@ -181,7 +188,7 @@
                 <ul class="btmbar-widget">
                     <li>
                         @if(Auth::check())
-                        <a href="{{route('dashboard')}}">
+                        <a href="{{route('dashboard.customer.index')}}">
                             <i class="fas fa-user"></i>
                         </a>                            
                         @else
@@ -360,7 +367,7 @@
         <div class="container">
             <div class="footer-end-content">
                 <p>
-                    تمام حق و حقوق محفوظ است. 1399 - طراحی توسط <a href="#">سالارشیرخانی  </a>
+                    تمام حق و حقوق محفوظ است. 1400 - طراحی توسط <a href="#">سالارشیرخانی  </a>
                 </p>
                 <ul class="social-transparent footer-social">
                     <li>
