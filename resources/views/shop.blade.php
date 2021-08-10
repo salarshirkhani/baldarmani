@@ -11,7 +11,7 @@
                     <h2>محصولات</h2>
                     <ol class="breadcrumb">
                         <li class="breadcrumb-item">
-                            <a href="index.html">صفحه اصلی</a>
+                            <a href="{{route('/')}}">صفحه اصلی</a>
                         </li>
                         <li class="breadcrumb-item active" aria-current="page">محصولات</li>
                     </ol>
@@ -54,7 +54,7 @@
                        </div>
                        <div class="product-title">
                            <h5>
-                               <a href="{{route('product',['id'=>$item->id])}}">{!! \Illuminate\Support\Str::limit($item->explain, 70, ' ...') !!}</a>
+                               <a href="{{route('product',['name'=>$item->name])}}">{!! \Illuminate\Support\Str::limit($item->explain, 70, ' ...') !!}</a>
                            </h5>
                            <ul class="product-location">
                                <li>

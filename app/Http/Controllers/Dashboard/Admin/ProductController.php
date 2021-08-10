@@ -11,6 +11,8 @@ use Illuminate\Auth\Access\Gate;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Null_;
 use Illuminate\Support\Facades\Storage;
+use App\Keyword;
+use App\Http\Requests\Dashboard\Admin\ProductStoreRequest;
 
 class ProductController extends Controller
 {
@@ -21,6 +23,7 @@ class ProductController extends Controller
 
     public function CreatePost(Request $request)
     {
+        $data = $request->validated();
         $post = new product([
             'name' => $request->input('title'),
             'explain' => $request->input('explain'),
@@ -38,6 +41,10 @@ class ProductController extends Controller
          //-------------
          
         $post->save();
+
+        $keywords = Keyword::syncKeywords($data['keywords'], 'product');
+        $post->keywords()->sync($keywords);
+
         return redirect()->route('dashboard.admin.product.create')->with('info', 'محصول جدید ایجاد شد و نام آن ' . $request->input('title'));
     }
     public function GetManagePost(Request $request)

@@ -16,4 +16,12 @@ class Post extends Model
     ];
 
     protected $table = 'posts';
+
+    public function keywords() {
+        return $this->belongsToMany('App\Keyword', 'service_keyword_relation', 'post_id', 'keyword_id')->withTimestamps();
+    }
+
+    public function postcategory() {
+        return $this->belongsTo('App\postcategory', 'category_id');
+    }
 }

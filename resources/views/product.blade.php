@@ -31,7 +31,7 @@
                     <div class="ad-details-breadcrumb">
                         <ol class="breadcrumb">
                             <li>
-                                <span class="flat-badge sale">برای فروش ویژه</span>
+                                <span class="flat-badge sale">{{$category->name}}</span>
                             </li>
                             <li class="breadcrumb-item">
                                 <a href="#">محصولات </a>
@@ -41,7 +41,7 @@
                     </div>
                     <div class="ad-details-heading">
                         <h2>
-                            <a href="{{route('product',['id'=>$item->id])}}">{{$item->name}}</a>
+                            <a href="{{route('product',['name'=>$item->name])}}">{{$item->name}}</a>
                         </h2>
                     </div>
                     <div class="ad-details-slider slider-arrow">
@@ -69,31 +69,23 @@
                         <ul>
                             <li>
                                 <h6>قیمت: </h6>
-                                <p>20900 تومان</p>
-                            </li>
-                            <li>
-                                <h6>نویسنده:</h6>
-                                <p>عباس بوعزا </p>
+                                <p>{{$item->price}} تومان</p>
                             </li>
                             <li>
                                 <h6>منتشر شده:</h6>
-                                <p>دی 1399</p>
+                                <p>{!! Facades\Verta::instance($item->created_at)->formatDate() !!}</p>
                             </li>
                             <li>
-                                <h6>انتشارات: </h6>
-                                <p>تهران</p>
+                                <h6>ارائه دهنده: </h6>
+                                <p>iranmed-slp</p>
                             </li>
                             <li>
                                 <h6>دسته بندی:</h6>
-                                <p>محبوبیت </p>
+                                <p>{{$category->name}}</p>
                             </li>
                             <li>
                                 <h6>وضعیت:</h6>
                                 <p>استفاده شده</p>
-                            </li>
-                            <li>
-                                <h6>نوع قیمت:</h6>
-                                <p>قابل معامله </p>
                             </li>
                             <li>
                                 <h6>نوع محصول:</h6>
@@ -107,6 +99,7 @@
                         <h5>توضیحات </h5>
                     </div>
                     <div class="ad-details-descrip">
+                        {!!$item->explain!!}
                         {!!$item->content!!}
                     </div>
                 </div>

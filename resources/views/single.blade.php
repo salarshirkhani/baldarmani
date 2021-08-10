@@ -1,7 +1,7 @@
 @extends('layouts.front')
 @section('content')
 <link rel="stylesheet" href="{{asset('css/custom/blog-details.css')}}">
-<section class="single-banner">
+<section class="single-banner" style="background-image: url('{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}') ;">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -27,7 +27,7 @@
             <div class="col-lg-10 m-auto">
                 <div class="blog-details-title">
                     <h2>
-                        <a href="{{route('single',['id'=>$item->id])}}">{{$item->title}}</a>
+                        <a href="{{route('single',['id'=>$item->title])}}">{{$item->title}}</a>
                     </h2>
                 </div>
                 <ul class="blog-details-meta">
@@ -38,13 +38,13 @@
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('single',['id'=>$item->id])}}">
+                        <a href="{{route('single',['id'=>$item->title])}}">
                             <i class="far fa-calendar-alt"></i>
                             <p>{!! Facades\Verta::instance($item->created_at)->formatDate() !!}</p>
                         </a>
                     </li>
                     <li>
-                        <a href="{{route('single',['id'=>$item->id])}}">
+                        <a href="{{route('single',['id'=>$item->title])}}">
                             <i class="far fa-folder-open"></i>
                             <p>گفتار درمانی</p>
                         </a>
@@ -61,7 +61,7 @@
                         {!!$item->content!!}
                 </div>
                 <div class="blog-details-widget">
-                    <ul class="tag-list">
+                   <!-- <ul class="tag-list">
                         <li>
                             <h4>برچسب ها:</h4>
                         </li>
@@ -73,29 +73,29 @@
                         </li>
                         <li>
                             <a href="#">کنسرت </a>
-                        </li>
-                    </ul>
+                        </li> 
+                    </ul> -->
                     <ul class="share-list">
                         <li>
                             <h4>اشتراک:</h4>
                         </li>
                         <li>
-                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://iranmedslp.com/single/{{$item->id}}">
+                            <a href="https://www.facebook.com/sharer/sharer.php?u=http://iranmedslp.com/single/{{$item->title}}">
                                 <i class="fab fa-facebook-f"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://twitter.com/share?text={{$item->title}}&url=http://iranmedslp.com/single/{{$item->id}}">
+                            <a href="https://twitter.com/share?text={{$item->title}}&url=http://iranmedslp.com/single/{{$item->title}}">
                                 <i class="fab fa-twitter"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://telegram.me/share/url?url=http://iranmedslp.com/single/{{$item->id}}">
+                            <a href="https://telegram.me/share/url?url=http://iranmedslp.com/single/{{$item->title}}">
                                 <i class="fab fa-telegram"></i>
                             </a>
                         </li>
                         <li>
-                            <a href="https://web.whatsapp.com/send?text=http://iranmedslp.com/single/{{$item->id}}">
+                            <a href="https://web.whatsapp.com/send?text=http://iranmedslp.com/single/{{$item->title}}">
                                 <i class="fab fa-whatsapp"></i>
                             </a>
                         </li>

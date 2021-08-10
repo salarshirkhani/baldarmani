@@ -21,16 +21,17 @@
         <x-card type="info">
             <x-card-header>محصولات</x-card-header>
         <form style="padding:10px;" action="{{ route('dashboard.admin.product.create') }}" method="post" role="form" class="form-horizontal " enctype="multipart/form-data">
-            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required  name="title"  placeholder="عنوان">            
-            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="explain"  placeholder="توضیح کوتاه">
+            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control"   name="title"  placeholder="عنوان">            
+            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control"  name="explain"  placeholder="توضیح کوتاه">
             <x-select-group name="category_id" label="دسته‌بندی" required :model="$model ?? null">
                 @foreach($categories as $category)
                     <x-select-item :value="$category->id">@if(!empty($category->parent_id))@for($i = 2; $i <= $category->level; $i ++)&nbsp;&nbsp;&nbsp;@endfor&#x2500;&#x251c; @endif{{ $category->name }}</x-select-item>
                 @endforeach
             </x-select-group>
-            <textarea type="text" id="content" style="padding:10px; margin: 10px 0px 16px 0px; height: 140px; border-radius: 7px; font-size: 16px;"class="form-control" required name="content"  placeholder="محتوا"></textarea>
-            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="price"  placeholder="قیمت">
-            <input type="file" style="margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; width: 100%; font-size: 16px;" class="dropzone" required name="img">
+            <textarea type="text" id="content" style="padding:10px; margin: 10px 0px 16px 0px; height: 140px; border-radius: 7px; font-size: 16px;"class="form-control"  name="content"  placeholder="محتوا"></textarea>
+            <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control"  name="price"  placeholder="قیمت">
+            <input type="file" style="margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; width: 100%; font-size: 16px;" class="dropzone"  name="img">
+            <x-textarea-group name="keywords" label="کلمات کلیدی (با ، یا , جدا کنید)" :default="!empty($model) ? $model->keywords->pluck('name')->join(',') : null" />
             <script type="text/javascript">
                 Dropzone.options.dropzone =
                     {

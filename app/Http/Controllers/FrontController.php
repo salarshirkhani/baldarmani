@@ -32,11 +32,13 @@ class FrontController extends Controller
 
     }
 
-    public function Sproduct($id) {
-        $item=Product::find($id);
+    public function Sproduct($name) {
+        $item=Product::where('name',$name)->first();
+        $category=Category::find($item->category);
         return view('product',[
             'categories' => Category::whereNull('parent_id')->with('allChildren')->get(),
             'item' => $item,
+            'category' => $category,
         ]);
 
     }
@@ -51,7 +53,7 @@ class FrontController extends Controller
     }
 
     public function single($id) {
-        $item=Post::find($id);
+        $item=Post::where('title',$id)->first();
         $related_posts = Post::inRandomOrder()->get();
         return view('single',[
             'categories' => Category::whereNull('parent_id')->with('allChildren')->get(),
@@ -64,6 +66,12 @@ class FrontController extends Controller
     public function contact() {
 
         return view('contact');
+
+    }
+    
+    public function about() {
+
+        return view('about');
 
     }
 

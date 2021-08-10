@@ -47,6 +47,8 @@ class Product extends Model
 		'category'
     ];
 
-
+    public function keywords() {
+        return $this->belongsToMany('App\Keyword', 'product_keyword_relation', 'product_id', 'keyword_id')->withTimestamps();
+    }
 
 }

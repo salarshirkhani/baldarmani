@@ -11,9 +11,12 @@ use Illuminate\Auth\Access\Gate;
 use Illuminate\Support\Facades\Auth;
 use phpDocumentor\Reflection\Types\Null_;
 use Illuminate\Support\Facades\Storage;
+use App\Keyword;
+use App\Http\Requests\SplitsKeywords;
 
 class PostController extends Controller
 {
+    use SplitsKeywords;
     public function GetCreatePost()
     {
         return view('dashboard.admin.news.create');
@@ -35,6 +38,10 @@ class PostController extends Controller
         $post->pic = $filename;
 
         $post->save();
+
+        $keywords = Keyword::syncKeywords($this->addKeywordsToData($request['keywords']), 'post');
+        $post->keywords()->attach($keywords);
+
         return redirect()->route('dashboard.admin.news.create')->with('info', '  پست جدید ذخیره شد و نام آن' . $request->input('title'));
     }
     public function GetManagePost(Request $request)

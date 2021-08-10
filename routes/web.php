@@ -16,10 +16,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'FrontController@index')->name('/');
 Route::get('products', 'FrontController@products')->name('products');
-Route::get('product/{id}', 'FrontController@Sproduct')->name('product');
+Route::get('product/{name}', 'FrontController@Sproduct')->name('product');
 Route::get('blog', 'FrontController@blog')->name('blog');
 Route::get('single/{id}', 'FrontController@single')->name('single');
 Route::get('contact', 'FrontController@contact')->name('contact');
+Route::get('about', 'FrontController@about')->name('about');
 Route::get('search', 'FrontController@search')->name('search');
 
 Auth::routes();
@@ -53,7 +54,9 @@ Route::prefix('dashboard')
                 Route::get('deleteproduct/{id}','ProductController@DeletePost')->name('product.deleteproduct');  
                 Route::get('updateproduct/{id}','ProductController@GetEditPost')->name('product.updateproduct');
                 Route::post('updateproduct/{id}','ProductController@UpdatePost')->name('product.updateproduct');      
- 
+                Route::get('/run-migrations', function () {
+                    return Artisan::call('migrate', ["--force" => true ]);
+                });
                 //Category Controller 
                 Route::resource("categories", "CategoryController");
 

@@ -35,12 +35,6 @@ class Keyword extends Model
 
     protected $fillable = ['name', 'type'];
 
-    public function companies() {
-        if (!empty($this->type) && $this->type != 'company')
-            throw new \LogicException("This keyword type doesn't support companies.");
-
-        return $this->belongsToMany('App\Company', 'company_keyword_relation', 'keyword_id', 'company_id')->withTimestamps();
-    }
 
     public function products() {
         if (!empty($this->type) && $this->type != 'product')
@@ -48,10 +42,10 @@ class Keyword extends Model
         return $this->belongsToMany('App\Product', 'product_keyword_relation', 'keyword_id', 'product_id')->withTimestamps();
     }
 
-    public function services() {
-        if (!empty($this->type) && $this->type != 'service')
-            throw new \LogicException("This category type doesn't support services.");
-        return $this->belongsToMany('App\Service', 'service_keyword_relation', 'keyword_id', 'service_id')->withTimestamps();
+    public function posts() {
+        if (!empty($this->type) && $this->type != 'post')
+            throw new \LogicException("This category type doesn't support posts.");
+        return $this->belongsToMany('App\Post', 'service_keyword_relation', 'keyword_id', 'post_id')->withTimestamps();
     }
 
     public static function syncKeywords(array $names, $type) {

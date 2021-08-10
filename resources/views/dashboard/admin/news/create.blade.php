@@ -26,6 +26,7 @@
             <textarea type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 140px; border-radius: 7px; font-size: 16px;"class="form-control" required name="content"  placeholder="محتوا"></textarea>
             <input type="text" style="padding:10px; margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; font-size: 16px;"class="form-control" required name="writer"  placeholder="نام نویسنده">
             <input type="file" style="margin: 10px 0px 16px 0px; height: 40px; border-radius: 7px; width: 100%; font-size: 16px;" class="dropzone" required name="img">
+            <x-textarea-group name="keywords" label="کلمات کلیدی (با ، یا , جدا کنید)" :default="!empty($model) ? $model->keywords->pluck('name')->join(',') : null" />
             <script type="text/javascript">
                 Dropzone.options.dropzone =
                     {

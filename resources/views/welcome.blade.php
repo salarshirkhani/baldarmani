@@ -5,7 +5,7 @@
                 <div class="banner-content">
                     <h1>با صحبت کردن درست #تاثیر کلام خود را بیشتر کنید</h1>
                     <p>گفتار درمانی روشی است تا طریه صحبت کردن خود را بهبود ببخشید و بتوانید قوی تر کار کنید و بیشتر تلاش کنید</p>
-                    <a href="leftbar-list.html" class="btn btn-outline">
+                    <a href="{{route('products')}}" class="btn btn-outline">
                         <i class="fas fa-eye"></i>
                         <span>نمایش تمام محصول ها</span>
                     </a>
@@ -21,9 +21,9 @@
                         </div>
                         <div class="suggest-meta">
                             <h6>
-                                <p>آموزش</p>
+                                <p> مقالات </p>
                             </h6>
-                            <a href="">مشاهده </a>
+                            <a href="https://www.iranmedslp.com/blog">مشاهده </a>
                         </div>
                     </div>
                     <div class="suggest-card">
@@ -32,9 +32,9 @@
                         </div>
                         <div class="suggest-meta">
                             <h6>
-                               <p>فیلم های آموزشی</p>
+                               <p>آموزش</p>
                             </h6>
-                            <a href="">مشاهده </a>
+                            <a href="https://www.iranmedslp.com/blog">مشاهده </a>
                         </div>
                     </div>
                     <div class="suggest-card">
@@ -43,9 +43,9 @@
                         </div>
                         <div class="suggest-meta">
                             <h6>
-                                <p>ابزار و تمرین</p>
+                                <p> پرونده الکترونیکی</p>
                             </h6>
-                            <a href="">مشاهده </a>
+                            <a href="https://www.iranmedslp.com/dashboard/customer/consultant/manage">مشاهده </a>
                         </div>
                     </div>
                     <div class="suggest-card">
@@ -54,9 +54,9 @@
                         </div>
                         <div class="suggest-meta">
                             <h6>
-                                <p>موارد اضطراری</p>
+                                <p>فروشگاه</p>
                             </h6>
-                            <a href="">مشاهده </a>
+                            <a href="{{route('products')}}">مشاهده </a>
                         </div>
                     </div>             
                 </div>
@@ -106,7 +106,7 @@
                                     </ol>
                                     <div class="feature-title">
                                         <h3>
-                                            <a href="{{route('single',['id'=>$item->id])}}">{{$item->title}}</a>
+                                            <a href="{{route('single',['id'=>$item->title])}}">{{$item->title}}</a>
                                         </h3>
                                     </div>
                                     <ul class="feature-meta">
@@ -180,7 +180,7 @@
                                     </div>
                                     <div class="product-title">
                                         <h5>
-                                            <a href="{{route('product',['id'=>$item->id])}}">{!! \Illuminate\Support\Str::limit($item->explain, 70, ' ...') !!}</a>
+                                            <a href="{{route('product',['name'=>$item->name])}}">{!! \Illuminate\Support\Str::limit($item->explain, 70, ' ...') !!}</a>
                                         </h5>
 										<ul class="product-location">
                                             <li>
@@ -221,8 +221,8 @@
                     <div class="col-lg-12">
                         <div class="section-center-heading">
                             <h2>درباره وب سایت گفتار درمانی ما</h2>
-                    <p>گروه آموزشی- درمانی Iran-Med-SLP متشکل از درمانگران با سابقه کار بیشتر از 5 سال و ویزیت بیش از 12 هزار بیمار دارای اختلال بلع در بیمارستان‌های تهران، در سال 1399 تاسیس شده است. هدف اصلی ایجاد این گروه آگاه‌سازی مردم سرزمینمان ایران در مورد اختلالات بلع، عواقب آن و ارائه خدمت به بیماران نیازمند دریافت خدمات گفتار درمانی است. همچنین جهت ارتقاء سطح کیفی خدمات گفتاردرمانی در سطح کشور، آموزش‌هایی را برای همکاران گفتاردرمانگر شاغل در بیمارستان‌ها و سایر محیط‌های درمانی تدارک دیده است. کادر درمان این گروه متشکل از درمانگرانی است که در بیمارستان‌های بزرگ تهران مانند عرفان، لاله، تهران، نیکان غرب آموزش دیده اند و به صورت تخصصی در زمینه اختلال بلع فعالیت می‌کنند. استفاده از ابزارهای با کیفیت تشخیصی و درمانی در زمینه اختلالات بلع و همکاری با مجموعه‌ای از پزشکان و متخصصان باتجربه از ویژگی‌های خاص گروهIran-Med-SLP است</p>
-                            <a href="ad-post.html" class="btn btn-outline">
+<p>گروه آموزشی- درمانی Iran-Med-SLP متشکل از درمانگران با سابقه کار بیشتر از 5 سال و ویزیت بیش از 12 هزار بیمار دارای اختلال بلع در بیمارستان‌های تهران، در سال 1399 تاسیس شده است. هدف اصلی ایجاد این گروه آگاه‌سازی مردم سرزمینمان ایران در مورد اختلالات بلع، عواقب آن و ارائه خدمت به بیماران نیازمند دریافت خدمات گفتار درمانی است. </p>
+                            <a href="{{route('about')}}" class="btn btn-outline">
                                 <i class="fas fa-plus-circle"></i>
                                 <span>بیشتر درباره ما بخوانید</span>
                             </a>

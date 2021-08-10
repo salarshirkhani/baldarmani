@@ -47,14 +47,14 @@
                                @foreach($posts as $item)  
                                 <li>
                                     <div class="suggest-img">
-                                        <a href="{{route('single',['id'=>$item->id])}}">
+                                        <a href="{{route('single',['id'=>$item->title])}}">
                                             <img src="{{ asset('images/'.$item['pic'].'/'.$item['pic'] ) }}" alt="{{$item->title}}">
                                         </a>
                                     </div>
                                     <div class="suggest-content">
                                         <div class="suggest-title">
                                             <h4>
-                                                <a href="{{route('single',['id'=>$item->id])}}">{{$item->title}}</a>
+                                                <a href="{{route('single',['id'=>$item->title])}}">{{$item->title}}</a>
                                             </h4>
                                         </div>
                                         <div class="suggest-meta">
@@ -96,13 +96,8 @@
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="#">
-                                        <i class="fab fa-behance"></i>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#">
-                                        <i class="fab fa-pinterest-p"></i>
+                                    <a href="https://instagram.com/moayed_salmani_slp">
+                                        <i class="fab fa-instagram"></i>
                                     </a>
                                 </li>
                             </ul>

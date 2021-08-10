@@ -29,7 +29,7 @@
                             </li>
                             <li>
                                 <a href="{{route('/')}}" class="header-logo">
-                                    <img src="images/logo.png" alt="logo">
+                                    <img src="{{asset('images/logo.png')}}" alt="logo">
                                 </a>
                             </li>
                             <li>
@@ -147,6 +147,12 @@
                                 <li class="navbar-item navbar-dropdown">
                                     <a class="navbar-link" href="{{route('contact')}}">
                                         <span>تماس با ما</span>
+                                        <i class="fas fa-plus"></i>
+                                    </a>
+                                </li>
+                                <li class="navbar-item navbar-dropdown">
+                                    <a class="navbar-link" href="{{route('about')}}">
+                                        <span>درباره ی ما</span>
                                         <i class="fas fa-plus"></i>
                                     </a>
                                 </li>
@@ -294,7 +300,7 @@
                     <h3>اطلاعات </h3>
                     <ul class="footer-widget">
                         <li>
-                            <a href="#">درباره ما</a>
+                            <a href="{{route('about')}}}}">درباره ما</a>
                         </li>
                         <li>
                             <a href="#">سیستم تحویل </a>
